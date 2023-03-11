@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiOutlineMail, AiFillLinkedin, AiFillMediumSquare, AiFillGithub, AiFillBehanceSquare } from 'react-icons/ai';
 import Image from "next/image";
-import profile from "../public/profile.jpg";
+import profile from "../public/Profile.jpg";
 import design from "../public/design.png";
 import code from "../public/code.png";
 import tutoring from "../public/tutoring.png";
