@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Header from "./header.js";
-import Services from "./services.js";
-import Portfolio from "./portfolio.js";
+import Header from "../components/header.js";
+import Services from "../components/services.js";
+import Portfolio from "../components/portfolio.js";
+import AppContext from "../context/AppContext.js";
 import { useContext } from "react";
-import AppContext from "../components/AppContext.js";
 
 export default function Home() {
   const context = useContext(AppContext);

@@ -3,7 +3,7 @@ import { AiOutlineMail, AiFillLinkedin, AiFillMediumSquare, AiFillGithub, AiFill
 import Image from "next/image";
 import profile from "../public/images/Profile.jpg";
 import { useContext } from "react";
-import AppContext from "../components/AppContext";
+import AppContext from "../context/AppContext.js";
 
 export default function Header() {
     const context = useContext(AppContext);
