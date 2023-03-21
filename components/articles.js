@@ -51,10 +51,10 @@ export default function Articles() {
                 <h3 className="text-3xl py-1 dark:text-white">Latest Articles</h3>
                 <ul className="mb-8 pt-4">
                     {items.map((item, index) => (
-                        <div>
+                        <div key={index}>
                             <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                             <a href={item.link} target={"_blank"}>
-                                <h3 key={index} className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
+                                <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
                             </a>
                         </div>
                     ))}
