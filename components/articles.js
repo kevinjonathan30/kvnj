@@ -19,9 +19,9 @@ export default function Articles() {
         fetchData();
     }, []);
 
-    function formatDate(string) {
+    function formatDate(date) {
         var options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(string).toLocaleDateString([], options);
+        return new Date(date).toLocaleDateString([], options);
     }
 
     if (error) {
@@ -52,7 +52,7 @@ export default function Articles() {
                 <ul className="mb-8 pt-4">
                     {items.map((item, index) => (
                         <div key={index}>
-                            <p className="text-sm font-medium pt-2 dark:text-white">{ formatDate(item.pubDate) }</p>
+                            <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                             <a href={item.link} target={"_blank"}>
                                 <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
                             </a>

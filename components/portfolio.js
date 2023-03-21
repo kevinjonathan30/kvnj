@@ -21,11 +21,10 @@ export default function Portfolio() {
                 <div className="basis-1/3 flex-1">
                     <a href={"https://www.behance.net/gallery/138798873/BerKata-Web"} target={'_blank'} >
                         <Image
-                            src={ berkata }
+                            src={berkata}
                             className="rounded-lg object-cover"
                             width={'100%'}
                             height={'100%'}
-                            layout="responsive"
                             alt="berkata"
                         />
                     </a>
@@ -33,11 +32,10 @@ export default function Portfolio() {
                 <div className="basis-1/3 flex-1">
                     <a href={"https://www.behance.net/gallery/134936171/Ko-Hi"} target={'_blank'} >
                         <Image
-                            src={ kohi }
+                            src={kohi}
                             className="rounded-lg object-cover"
                             width={'100%'}
                             height={'100%'}
-                            layout="responsive"
                             alt="kohi"
                         />
                     </a>
@@ -45,11 +43,10 @@ export default function Portfolio() {
                 <div className="basis-1/3 flex-1">
                     <a href={"https://www.behance.net/gallery/134151915/Juraku"} target={'_blank'} >
                         <Image
-                            src={ juraku }
+                            src={juraku}
                             className="rounded-lg object-cover"
                             width={'100%'}
                             height={'100%'}
-                            layout="responsive"
                             alt="juraku"
                         />
                     </a>
@@ -57,11 +54,10 @@ export default function Portfolio() {
                 <div className="basis-1/3 flex-1">
                     <a href={"https://www.behance.net/gallery/134145749/JadiRelawan"} target={'_blank'} >
                         <Image
-                            src={ jadirelawan }
+                            src={jadirelawan}
                             className="rounded-lg object-cover"
                             width={'100%'}
                             height={'100%'}
-                            layout="responsive"
                             alt="jadirelawan"
                         />
                     </a>
@@ -69,11 +65,10 @@ export default function Portfolio() {
                 <div className="basis-1/3 flex-1">
                     <a href={"https://www.behance.net/gallery/128949225/SpeecHack"} target={'_blank'} >
                         <Image
-                            src={ speechack }
+                            src={speechack}
                             className="rounded-lg object-cover"
                             width={'100%'}
                             height={'100%'}
-                            layout="responsive"
                             alt="speechack"
                         />
                     </a>
