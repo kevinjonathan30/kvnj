@@ -1,5 +1,5 @@
 import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { AiOutlineMail, AiFillLinkedin, AiFillMediumSquare, AiFillGithub, AiFillBehanceSquare } from 'react-icons/ai';
+import { AiOutlineMail, AiFillLinkedin, AiFillGithub, AiFillBehanceSquare } from 'react-icons/ai';
 import Image from "next/image";
 import profile from "../public/images/Profile.jpg";
 import { useContext } from "react";
@@ -43,9 +43,6 @@ export default function Header() {
                 </a>
                 <a href={"https://www.linkedin.com/in/kevinjonathan-30/"} target={"_blank"}>
                     <AiFillLinkedin />
-                </a>
-                <a href={"https://kevin-jonathan.medium.com/"} target={"_blank"}>
-                    <AiFillMediumSquare />
                 </a>
                 <a href={"https://github.com/KevinJonathan30"} target={"_blank"}>
                     <AiFillGithub />
