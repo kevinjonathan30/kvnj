@@ -34,7 +34,7 @@ export default function Articles() {
                     </ul>
                     <a
                         className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
-                        href={"https://medium.com/feed/@kevin-jonathan"}
+                        href={"https://kevin-jonathan.medium.com/"}
                         target={"_blank"}
                         rel={"noopener noreferrer"}
                     >
@@ -61,7 +61,7 @@ export default function Articles() {
                 </ul>
                 <a
                     className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
-                    href={"https://medium.com/feed/@kevin-jonathan"}
+                    href={"https://kevin-jonathan.medium.com/"}
                     target={"_blank"}
                     rel={"noopener noreferrer"}
                 >
