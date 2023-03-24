@@ -5,10 +5,11 @@ This is a simple portfolio website created using Next.js, React, and TailwindCSS
 A live demo of the website can be found [here](https://kevin-jonathan.vercel.app/).
 
 ## Features
-Responsive design
-Dark and light mode toggle
-Projects section with links to Github repos and live demos
-Built with Next.js for server-side rendering and fast performance
+- Responsive design
+- Dark and light mode toggle
+- Projects section with links to Github repos and live demos
+- Built with Next.js for server-side rendering and fast performance
+- Styled with TailwindCSS
 
 ## Installation and Usage
 To run this project locally, follow these steps:
