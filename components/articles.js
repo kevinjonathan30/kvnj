@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const CACHE_KEY = 'mediumRss';
+
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
@@ -7,10 +9,18 @@ export default function Articles() {
     useEffect(() => {
         async function fetchData() {
             try {
+                let cachedData = localStorage.getItem(CACHE_KEY);
+
+                if (cachedData) {
+                    cachedData = JSON.parse(cachedData);
+                    setItems(cachedData.items.slice(0, 3));
+                }
+
                 const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@kevin-jonathan');
                 const data = await res.json();
                 const items = data.items.slice(0, 3);
                 setItems(items);
+                localStorage.setItem(CACHE_KEY, JSON.stringify(data));
             } catch {
                 setError(true);
             }
