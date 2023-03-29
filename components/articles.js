@@ -16,7 +16,7 @@ export default function Articles() {
                     setItems(cachedData.items.slice(0, 3));
                 }
 
-                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@kevin-jonathan');
+                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://kevin-jonathan.medium.com/feed');
                 const data = await res.json();
                 const items = data.items.slice(0, 3);
                 setItems(items);
