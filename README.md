@@ -25,6 +25,3 @@ Some parts of the website can be configured by editing the config.js file, inclu
 
 ## Credits
 This website was created by Kevin Jonathan using [Next.js](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/).
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
