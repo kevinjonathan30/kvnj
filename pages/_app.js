@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={true}>
       <AppContext.Provider value={{ darkMode, setDarkMode }}>
         <Component {...pageProps} />
         <Analytics />
