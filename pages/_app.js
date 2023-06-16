@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import { useState, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 import { Analytics } from '@vercel/analytics/react';
+import { AnimatePresence } from 'framer-motion';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);
@@ -18,9 +19,11 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <AppContext.Provider value={{ darkMode, setDarkMode }}>
-      <Component {...pageProps} />
-      <Analytics />
-    </AppContext.Provider>
+    <AnimatePresence mode="wait" initial={false}>
+      <AppContext.Provider value={{ darkMode, setDarkMode }}>
+        <Component {...pageProps} />
+        <Analytics />
+      </AppContext.Provider>
+    </AnimatePresence>
   )
 }
