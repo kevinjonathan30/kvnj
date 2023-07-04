@@ -1,12 +1,12 @@
-import Head from 'next/head';
+import { useContext } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import Head from "next/head";
 import Header from "../components/header.js";
 import Services from "../components/services.js";
 import Articles from "../components/articles.js";
 import Portfolio from "../components/portfolio.js";
 import AppContext from "../context/AppContext.js";
-import { useContext } from "react";
 import Layout from "./layout.js";
-import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function Home() {
   const context = useContext(AppContext);

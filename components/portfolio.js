@@ -1,10 +1,9 @@
-import Image from "next/image";
-import speechack from "../public/images/SpeecHack.jpg";
-import jadirelawan from "../public/images/JadiRelawan.jpg";
-import juraku from "../public/images/Juraku.jpg";
-import kohi from "../public/images/Ko-Hi.jpg";
+import ImageLink from './include/ImageLink';
 import berkata from "../public/images/BerKata.jpg";
-import MotionWrapper from './include/MotionWrapper';
+import kohi from "../public/images/Ko-Hi.jpg";
+import juraku from "../public/images/Juraku.jpg";
+import jadirelawan from "../public/images/JadiRelawan.jpg";
+import speechack from "../public/images/SpeecHack.jpg";
 
 export default function Portfolio() {
     return (
@@ -20,69 +19,39 @@ export default function Portfolio() {
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
                 <div className="basis-1/3 flex-1">
-                    <MotionWrapper>
-                        <a href={"https://www.behance.net/gallery/138798873/BerKata-Web"} target={'_blank'} >
-                            <Image
-                                src={berkata}
-                                className="rounded-lg object-cover"
-                                width={'100%'}
-                                height={'100%'}
-                                alt="berkata"
-                            />
-                        </a>
-                    </MotionWrapper>
+                    <ImageLink
+                        href={"https://www.behance.net/gallery/138798873/BerKata-Web"}
+                        src={berkata}
+                        alt="berkata"
+                    />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <MotionWrapper>
-                        <a href={"https://www.behance.net/gallery/134936171/Ko-Hi"} target={'_blank'} >
-                            <Image
-                                src={kohi}
-                                className="rounded-lg object-cover"
-                                width={'100%'}
-                                height={'100%'}
-                                alt="kohi"
-                            />
-                        </a>
-                    </MotionWrapper>
+                    <ImageLink
+                        href={"https://www.behance.net/gallery/134936171/Ko-Hi"}
+                        src={kohi}
+                        alt="kohi"
+                    />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <MotionWrapper>
-                        <a href={"https://www.behance.net/gallery/134151915/Juraku"} target={'_blank'} >
-                            <Image
-                                src={juraku}
-                                className="rounded-lg object-cover"
-                                width={'100%'}
-                                height={'100%'}
-                                alt="juraku"
-                            />
-                        </a>
-                    </MotionWrapper>
+                    <ImageLink
+                        href={"https://www.behance.net/gallery/134151915/Juraku"}
+                        src={juraku}
+                        alt="juraku"
+                    />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <MotionWrapper>
-                        <a href={"https://www.behance.net/gallery/134145749/JadiRelawan"} target={'_blank'} >
-                            <Image
-                                src={jadirelawan}
-                                className="rounded-lg object-cover"
-                                width={'100%'}
-                                height={'100%'}
-                                alt="jadirelawan"
-                            />
-                        </a>
-                    </MotionWrapper>
+                    <ImageLink
+                        href={"https://www.behance.net/gallery/134145749/JadiRelawan"}
+                        src={jadirelawan}
+                        alt="jadirelawan"
+                    />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <MotionWrapper>
-                        <a href={"https://www.behance.net/gallery/128949225/SpeecHack"} target={'_blank'} >
-                            <Image
-                                src={speechack}
-                                className="rounded-lg object-cover"
-                                width={'100%'}
-                                height={'100%'}
-                                alt="speechack"
-                            />
-                        </a>
-                    </MotionWrapper>
+                    <ImageLink
+                        href={"https://www.behance.net/gallery/128949225/SpeecHack"}
+                        src={speechack}
+                        alt="speechack"
+                    />
                 </div>
                 <div className="basis-1/3 flex-1"></div>
             </div>

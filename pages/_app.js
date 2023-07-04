@@ -1,8 +1,8 @@
-import '@/styles/globals.css';
 import { useState, useEffect } from 'react';
-import AppContext from '../context/AppContext';
-import { Analytics } from '@vercel/analytics/react';
 import { AnimatePresence } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
+import '@/styles/globals.css';
+import AppContext from '../context/AppContext';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);

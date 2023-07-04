@@ -1,13 +1,33 @@
-import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { AiOutlineMail, AiFillLinkedin, AiFillGithub, AiFillBehanceSquare } from 'react-icons/ai';
-import Image from "next/image";
-import profile from "../public/images/Profile.jpg";
+import React from "react";
 import { useContext } from "react";
-import AppContext from "../context/AppContext.js";
-import MotionWrapper from './include/MotionWrapper';
+import Image from "next/image";
+import { AiOutlineMail, AiFillLinkedin, AiFillGithub, AiFillBehanceSquare } from "react-icons/ai";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import MotionWrapper from "./include/MotionWrapper";
+import profile from "../public/images/Profile.jpg";
+import AppContext from "../context/AppContext";
+
 
 export default function Header() {
     const context = useContext(AppContext);
+    const socialMediaLinks = [
+        {
+            icon: <AiOutlineMail />,
+            link: "mailto:kevinjonathan3010@gmail.com",
+        },
+        {
+            icon: <AiFillLinkedin />,
+            link: "https://www.linkedin.com/in/kevinjonathan-30/",
+        },
+        {
+            icon: <AiFillGithub />,
+            link: "https://github.com/KevinJonathan30",
+        },
+        {
+            icon: <AiFillBehanceSquare />,
+            link: "https://www.behance.net/kevinjonathan30",
+        },
+    ];
 
     return (
         <section className="min-h-screen">
@@ -43,26 +63,13 @@ export default function Header() {
                 </p>
             </div>
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
-                <MotionWrapper>
-                    <a href={"mailto:kevinjonathan3010@gmail.com"} target={"_blank"}>
-                        <AiOutlineMail />
-                    </a>
-                </MotionWrapper>
-                <MotionWrapper>
-                    <a href={"https://www.linkedin.com/in/kevinjonathan-30/"} target={"_blank"}>
-                        <AiFillLinkedin />
-                    </a>
-                </MotionWrapper>
-                <MotionWrapper>
-                    <a href={"https://github.com/KevinJonathan30"} target={"_blank"}>
-                        <AiFillGithub />
-                    </a>
-                </MotionWrapper>
-                <MotionWrapper>
-                    <a href={"https://www.behance.net/kevinjonathan30"} target={"_blank"}>
-                        <AiFillBehanceSquare />
-                    </a>
-                </MotionWrapper>
+                {socialMediaLinks.map(({ icon, link }, index) => (
+                    <MotionWrapper key={index}>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                            {icon}
+                        </a>
+                    </MotionWrapper>
+                ))}
             </div>
             <div className="relative mx-auto rounded-full w-72 h-72 mt-20 mb-20 overflow-hidden md:h-80 md:w-80">
                 <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
