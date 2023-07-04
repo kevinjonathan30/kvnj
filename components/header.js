@@ -4,6 +4,7 @@ import Image from "next/image";
 import profile from "../public/images/Profile.jpg";
 import { useContext } from "react";
 import AppContext from "../context/AppContext.js";
+import MotionWrapper from './include/MotionWrapper';
 
 export default function Header() {
     const context = useContext(AppContext);
@@ -14,19 +15,23 @@ export default function Header() {
                 <h1 className="text-xl font-burtons">kevinportfolio</h1>
                 <ul className="flex items-center">
                     <li>
-                        <BsFillMoonStarsFill onClick={() => {
-                            context.setDarkMode(!context.darkMode)
-                        }} className="cursor-pointer text-2xl" />
+                        <MotionWrapper>
+                            <BsFillMoonStarsFill onClick={() => {
+                                context.setDarkMode(!context.darkMode)
+                            }} className="cursor-pointer text-2xl" />
+                        </MotionWrapper>
                     </li>
                     <li>
-                        <a
-                            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md ml-8"
-                            href={"/files/Kevin's Resume.pdf"}
-                            target={"_blank"}
-                            rel={"noopener noreferrer"}
-                        >
-                            Resume
-                        </a>
+                        <MotionWrapper>
+                            <a
+                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md ml-8"
+                                href={"/files/Kevin's Resume.pdf"}
+                                target={"_blank"}
+                                rel={"noopener noreferrer"}
+                            >
+                                Resume
+                            </a>
+                        </MotionWrapper>
                     </li>
                 </ul>
             </nav>
@@ -38,18 +43,26 @@ export default function Header() {
                 </p>
             </div>
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
-                <a href={"mailto:kevinjonathan3010@gmail.com"} target={"_blank"}>
-                    <AiOutlineMail />
-                </a>
-                <a href={"https://www.linkedin.com/in/kevinjonathan-30/"} target={"_blank"}>
-                    <AiFillLinkedin />
-                </a>
-                <a href={"https://github.com/KevinJonathan30"} target={"_blank"}>
-                    <AiFillGithub />
-                </a>
-                <a href={"https://www.behance.net/kevinjonathan30"} target={"_blank"}>
-                    <AiFillBehanceSquare />
-                </a>
+                <MotionWrapper>
+                    <a href={"mailto:kevinjonathan3010@gmail.com"} target={"_blank"}>
+                        <AiOutlineMail />
+                    </a>
+                </MotionWrapper>
+                <MotionWrapper>
+                    <a href={"https://www.linkedin.com/in/kevinjonathan-30/"} target={"_blank"}>
+                        <AiFillLinkedin />
+                    </a>
+                </MotionWrapper>
+                <MotionWrapper>
+                    <a href={"https://github.com/KevinJonathan30"} target={"_blank"}>
+                        <AiFillGithub />
+                    </a>
+                </MotionWrapper>
+                <MotionWrapper>
+                    <a href={"https://www.behance.net/kevinjonathan30"} target={"_blank"}>
+                        <AiFillBehanceSquare />
+                    </a>
+                </MotionWrapper>
             </div>
             <div className="relative mx-auto rounded-full w-72 h-72 mt-20 mb-20 overflow-hidden md:h-80 md:w-80">
                 <Image src={profile} layout="fill" objectFit="cover" alt="profile" />

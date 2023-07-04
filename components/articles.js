@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import MotionWrapper from './include/MotionWrapper';
 
 const CACHE_KEY = 'mediumRss';
 
@@ -42,14 +43,18 @@ export default function Articles() {
                     <ul className="mb-8">
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                     </ul>
-                    <a
-                        className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
-                        href={"https://kevin-jonathan.medium.com/"}
-                        target={"_blank"}
-                        rel={"noopener noreferrer"}
-                    >
-                        Read on Medium
-                    </a>
+                    <div className="flex">
+                        <MotionWrapper>
+                            <a
+                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
+                                href={"https://kevin-jonathan.medium.com/"}
+                                target={"_blank"}
+                                rel={"noopener noreferrer"}
+                            >
+                                Read on Medium
+                            </a>
+                        </MotionWrapper>
+                    </div>
                 </div>
             </section>
         );
@@ -63,20 +68,28 @@ export default function Articles() {
                     {items.map((item, index) => (
                         <div key={index}>
                             <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
-                            <a href={item.link} target={"_blank"}>
-                                <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
-                            </a>
+                            <div className="flex">
+                                <MotionWrapper>
+                                    <a href={item.link} target={"_blank"}>
+                                        <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
+                                    </a>
+                                </MotionWrapper>
+                            </div>
                         </div>
                     ))}
                 </ul>
-                <a
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
-                    href={"https://kevin-jonathan.medium.com/"}
-                    target={"_blank"}
-                    rel={"noopener noreferrer"}
-                >
-                    Read More on Medium
-                </a>
+                <div className="flex">
+                    <MotionWrapper>
+                        <a
+                            className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
+                            href={"https://kevin-jonathan.medium.com/"}
+                            target={"_blank"}
+                            rel={"noopener noreferrer"}
+                        >
+                            Read More on Medium
+                        </a>
+                    </MotionWrapper>
+                </div>
             </div>
         </section>
     );
