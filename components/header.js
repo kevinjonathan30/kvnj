@@ -1,8 +1,6 @@
-import React from "react";
 import { useContext } from "react";
 import Image from "next/image";
-import { AiOutlineMail, AiFillLinkedin, AiFillGithub, AiFillBehanceSquare } from "react-icons/ai";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import { BsFillMoonStarsFill, BsEnvelopeFill, BsLinkedin, BsGithub, BsBehance } from "react-icons/bs";
 import MotionWrapper from "./include/MotionWrapper";
 import profile from "../public/images/Profile.jpg";
 import AppContext from "../context/AppContext";
@@ -12,19 +10,19 @@ export default function Header() {
     const context = useContext(AppContext);
     const socialMediaLinks = [
         {
-            icon: <AiOutlineMail />,
+            icon: <BsEnvelopeFill />,
             link: "mailto:kevinjonathan3010@gmail.com",
         },
         {
-            icon: <AiFillLinkedin />,
+            icon: <BsLinkedin />,
             link: "https://www.linkedin.com/in/kevinjonathan-30/",
         },
         {
-            icon: <AiFillGithub />,
+            icon: <BsGithub />,
             link: "https://github.com/KevinJonathan30",
         },
         {
-            icon: <AiFillBehanceSquare />,
+            icon: <BsBehance />,
             link: "https://www.behance.net/kevinjonathan30",
         },
     ];
@@ -71,7 +69,7 @@ export default function Header() {
                     </MotionWrapper>
                 ))}
             </div>
-            <div className="relative mx-auto rounded-full w-72 h-72 mt-20 mb-20 overflow-hidden md:h-80 md:w-80">
+            <div className="relative mx-auto rounded-full w-72 h-72 mt-20 mb-20 overflow-hidden md:h-80 md:w-80 border-2">
                 <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
             </div>
         </section>

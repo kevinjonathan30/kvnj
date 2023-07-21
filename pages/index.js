@@ -26,7 +26,7 @@ export default function Home() {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <main className="bg-stone-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+        <main className="bg-slate-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40">
           <motion.div className="progress-bar bg-blue-600 dark:bg-blue-700" style={{ scaleX }} />
           <Header />
           <Services />
