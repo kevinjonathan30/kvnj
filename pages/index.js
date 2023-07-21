@@ -5,6 +5,7 @@ import Header from "../components/header.js";
 import Services from "../components/services.js";
 import Articles from "../components/articles.js";
 import Portfolio from "../components/portfolio.js";
+import Footer from "../components/footer.js";
 import AppContext from "../context/AppContext.js";
 import Layout from "./layout.js";
 
@@ -32,6 +33,7 @@ export default function Home() {
           <Services />
           <Articles />
           <Portfolio />
+          <Footer />
         </main>
       </div>
     </Layout>
