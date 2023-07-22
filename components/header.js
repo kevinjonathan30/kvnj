@@ -5,7 +5,6 @@ import MotionWrapper from "./include/MotionWrapper";
 import profile from "../public/images/Profile.jpg";
 import AppContext from "../context/AppContext";
 
-
 export default function Header() {
     const context = useContext(AppContext);
     const socialMediaLinks = [
