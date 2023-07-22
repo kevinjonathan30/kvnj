@@ -30,7 +30,12 @@ export default function Header() {
     return (
         <section className="min-h-screen">
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <h1 className="text-xl font-burtons">kevinportfolio</h1>
+                <MotionWrapper>
+                    <a href={"./"} rel="noopener noreferrer">
+                        <h1 className="text-xl font-burtons">kevinportfolio</h1>
+                    </a>
+                </MotionWrapper>
+
                 <ul className="flex items-center">
                     <li>
                         <MotionWrapper>
