@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Image from "next/image";
-import { BsFillMoonStarsFill, BsEnvelopeFill, BsLinkedin, BsGithub, BsBehance } from "react-icons/bs";
+import { BsFillMoonStarsFill } from "react-icons/bs";
+import { SiGmail, SiLinkedin, SiGithub, SiBehance, SiPixiv } from "react-icons/si";
 import MotionWrapper from "./include/MotionWrapper";
 import profile from "../public/images/Profile.jpg";
 import AppContext from "../context/AppContext";
@@ -9,20 +10,24 @@ export default function Header() {
     const context = useContext(AppContext);
     const socialMediaLinks = [
         {
-            icon: <BsEnvelopeFill />,
-            link: "mailto:kevinjonathan3010@gmail.com",
+            icon: <SiBehance />,
+            link: "https://www.behance.net/kevinjonathan30",
         },
         {
-            icon: <BsLinkedin />,
-            link: "https://www.linkedin.com/in/kevinjonathan-30/",
-        },
-        {
-            icon: <BsGithub />,
+            icon: <SiGithub />,
             link: "https://github.com/KevinJonathan30",
         },
         {
-            icon: <BsBehance />,
-            link: "https://www.behance.net/kevinjonathan30",
+            icon: <SiGmail />,
+            link: "mailto:kevinjonathan3010@gmail.com",
+        },
+        {
+            icon: <SiLinkedin />,
+            link: "https://www.linkedin.com/in/kevinjonathan-30/",
+        },
+        {
+            icon: <SiPixiv />,
+            link: "https://www.pixiv.net/en/users/71310107",
         },
     ];
 
@@ -73,7 +78,7 @@ export default function Header() {
                     </MotionWrapper>
                 ))}
             </div>
-            <div className="relative mx-auto rounded-full w-72 h-72 mt-20 mb-20 overflow-hidden md:h-80 md:w-80 border-2">
+            <div className="relative mx-auto rounded-full w-64 h-64 mt-20 mb-20 overflow-hidden md:h-72 md:w-72 border-2">
                 <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
             </div>
         </section>
