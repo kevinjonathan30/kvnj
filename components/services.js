@@ -21,7 +21,8 @@ export default function Services() {
                     imageAlt="design"
                     title="UI/UX Design"
                     description="Creating clean UI/UX designs suited for your needs following human interface design guidelines."
-                    topics={['Photoshop', 'Illustrator', 'Adobe XD', 'Figma']}
+                    topicTitle="Design tools I use"
+                    topics={['Photoshop', 'Illustrator', 'Figma', 'Sketchbook']}
                 />
 
                 <ServiceSection
@@ -29,6 +30,7 @@ export default function Services() {
                     imageAlt="code"
                     title="Software Development"
                     description="Building softwares, ranging from website and mobile application using clean code and architecture."
+                    topicTitle="List of software topics I build"
                     topics={['Web Development', 'Android App Development', 'iOS App Development']}
                 />
 
@@ -37,6 +39,7 @@ export default function Services() {
                     imageAlt="tutoring"
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
+                    topicTitle="Topic I teach"
                     topics={['Mathematics', 'Physics', 'Chemistry', 'Programming']}
                 />
             </div>
