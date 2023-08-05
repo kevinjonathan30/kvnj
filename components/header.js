@@ -11,7 +11,7 @@ export default function Header() {
     const socialMediaLinks = [
         {
             icon: <SiBehance />,
-            link: "https://www.behance.net/kevinjonathan30",
+            link: "https://be.net/kevinjonathan3010",
         },
         {
             icon: <SiGithub />,
@@ -23,7 +23,7 @@ export default function Header() {
         },
         {
             icon: <SiLinkedin />,
-            link: "https://www.linkedin.com/in/kevinjonathan-30/",
+            link: "https://www.linkedin.com/in/kevinjonathan3010",
         },
         {
             icon: <SiPixiv />,
