@@ -23,7 +23,7 @@ export default function Home() {
       <div className={context.darkMode ? "dark" : ""}>
         <Head>
           <title>Kevin Jonathan | Software Engineer</title>
-          <meta name="description" content="Kevin Jonathan's Personal Portfolio Website" />
+          <meta name="description" content="My name is Kevin Jonathan, a highly motivated mobile development engineer specializing in iOS app development and Flutter. I hold a degree from Petra Christian University and have completed the prestigious Apple Developer Academy program." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="index, archive" />
           <link rel="icon" href="/favicon.ico" />
