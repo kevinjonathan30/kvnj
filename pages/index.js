@@ -23,8 +23,9 @@ export default function Home() {
       <div className={context.darkMode ? "dark" : ""}>
         <Head>
           <title>Kevin Jonathan | Software Engineer</title>
-          <meta name="description" content="Kevin's Personal Portfolio Website" />
+          <meta name="description" content="Kevin Jonathan's Personal Portfolio Website" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="index, archive" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className="bg-slate-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40">
