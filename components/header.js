@@ -36,7 +36,7 @@ export default function Header() {
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
                 <MotionWrapper>
                     <a href={"./"} rel="noopener noreferrer">
-                        <h1 className="text-xl font-burtons">kevinportfolio</h1>
+                        <h1 className="text-xl font-burtons">kevinjonathan</h1>
                     </a>
                 </MotionWrapper>
 
