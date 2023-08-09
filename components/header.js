@@ -51,7 +51,7 @@ export default function Header() {
                     <li>
                         <MotionWrapper>
                             <a
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md ml-8"
+                                className="bg-blue-600 text-white px-4 py-2 ml-8"
                                 href={"/files/Kevin's Resume.pdf"}
                                 target={"_blank"}
                                 rel={"noopener noreferrer"}
