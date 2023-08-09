@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Image from "next/image";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { SiGmail, SiLinkedin, SiGithub, SiBehance, SiPixiv } from "react-icons/si";
+import { MdClose, MdMinimize, MdSkipPrevious, MdSkipNext, MdOutlinePlayCircleOutline } from "react-icons/md";
 import MotionWrapper from "./include/MotionWrapper";
 import profile from "../public/images/Profile.png";
 import AppContext from "../context/AppContext";
@@ -51,7 +52,7 @@ export default function Header() {
                     <li>
                         <MotionWrapper>
                             <a
-                                className="bg-blue-600 text-white px-4 py-2 ml-8"
+                                className="bg-blue-600 text-white px-4 py-2 ml-8 border-2 border-black"
                                 href={"/files/Kevin's Resume.pdf"}
                                 target={"_blank"}
                                 rel={"noopener noreferrer"}
@@ -78,8 +79,30 @@ export default function Header() {
                     </MotionWrapper>
                 ))}
             </div>
-            <div className="relative mx-auto bg-gradient-to-b from-blue-300 rounded-full w-64 h-64 mt-20 mb-20 overflow-hidden md:h-72 md:w-72 border-2">
-                <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
+            <div>
+                <div className="relative mx-auto flex bg-blue-600 w-64 h-8 mt-20 overflow-hidden md:h-8 md:w-72 border-2 border-black border-b-0">
+                    <a href={"#"} className="my-auto ml-auto mr-2">
+                        <MdMinimize />
+                    </a>
+                    <a href={"#"} className="my-auto mr-2">
+                        <MdClose />
+                    </a>
+                </div>
+                <div className="relative mx-auto bg-blue-300 w-64 h-64 overflow-hidden md:h-72 md:w-72 border-2 border-black">
+                    <div className="w-100 h-100 bg-blue-600 absolute"></div>
+                    <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
+                </div>
+                <div className="relative mx-auto flex bg-blue-600 w-64 h-8 mb-20 overflow-hidden md:h-8 md:w-72 border-2 border-black border-t-0">
+                    <a href={"#"} className="my-auto ml-auto mr-2">
+                        <MdSkipPrevious />
+                    </a>
+                    <a href={"#"} className="my-auto mr-2 text-xl">
+                        <MdOutlinePlayCircleOutline />
+                    </a>
+                    <a href={"#"} className="my-auto mr-auto">
+                        <MdSkipNext />
+                    </a>
+                </div>
             </div>
         </section>
     );

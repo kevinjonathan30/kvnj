@@ -46,7 +46,7 @@ export default function Articles() {
                     <div className="flex">
                         <MotionWrapper>
                             <a
-                                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-md"
+                                className="bg-blue-600 text-white px-4 py-2 border-2 border-black"
                                 href={"https://kevin-jonathan.medium.com/"}
                                 target={"_blank"}
                                 rel={"noopener noreferrer"}
@@ -81,7 +81,7 @@ export default function Articles() {
                 <div className="flex">
                     <MotionWrapper>
                         <a
-                            className="bg-blue-600 text-white px-4 py-2"
+                            className="bg-blue-600 text-white px-4 py-2 border-2 border-black"
                             href={"https://kevin-jonathan.medium.com/"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}

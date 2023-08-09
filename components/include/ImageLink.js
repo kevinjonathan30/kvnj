@@ -7,7 +7,7 @@ export default function ImageLink({ href, src, alt }) {
             <a href={href} target="_blank" rel="noopener">
                 <Image
                     src={src}
-                    className="object-cover border-2"
+                    className="object-cover border-2 border-black"
                     alt={alt}
                 />
             </a>
