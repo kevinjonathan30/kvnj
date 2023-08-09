@@ -3,7 +3,7 @@ import Image from "next/image";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { SiGmail, SiLinkedin, SiGithub, SiBehance, SiPixiv } from "react-icons/si";
 import MotionWrapper from "./include/MotionWrapper";
-import profile from "../public/images/Profile.jpg";
+import profile from "../public/images/Profile.png";
 import AppContext from "../context/AppContext";
 
 export default function Header() {
@@ -32,11 +32,11 @@ export default function Header() {
     ];
 
     return (
-        <section className="min-h-screen">
+        <section>
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
                 <MotionWrapper>
-                    <a href={"./"} rel="noopener noreferrer">
-                        <h1 className="text-xl font-burtons">kevinjonathan</h1>
+                    <a href={"./"} rel="noopener">
+                        <h1 className="text-xl font-burtons">Kevin Jonathan</h1>
                     </a>
                 </MotionWrapper>
 
@@ -72,13 +72,13 @@ export default function Header() {
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
                 {socialMediaLinks.map(({ icon, link }, index) => (
                     <MotionWrapper key={index}>
-                        <a href={link} target="_blank" rel="noopener noreferrer">
+                        <a href={link} target="_blank" rel="noopener">
                             {icon}
                         </a>
                     </MotionWrapper>
                 ))}
             </div>
-            <div className="relative mx-auto rounded-full w-64 h-64 mt-20 mb-20 overflow-hidden md:h-72 md:w-72 border-2">
+            <div className="relative mx-auto bg-gradient-to-b from-blue-300 rounded-full w-64 h-64 mt-20 mb-20 overflow-hidden md:h-72 md:w-72 border-2">
                 <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
             </div>
         </section>
