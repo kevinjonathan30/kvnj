@@ -7,10 +7,7 @@ export default function Services() {
             <div>
                 <h3 className="text-3xl py-1 dark:text-white">Services I Offer</h3>
                 <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    I am currently open to freelance opportunities (private tutoring, web and mobile app development). I have done remote work in providing <span className="text-blue-500 dark:text-blue-400">software and UI/UX design </span> especially for <span className="text-blue-500 dark:text-blue-400">new startups </span> and helped talented people to create their dream digital products and turn their ideas into reality. I am also a freelance student tutor right now teaching mathematics, physics, chemistry, and programming related topics.
-                </p>
-                <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    I offer from a wide range of services, including software development, UI/UX designing and teaching.
+                    I offer from a wide range of services, including UI/UX designing, software development and student tutoring.
                 </p>
             </div>
             <div className="lg:flex gap-10">
