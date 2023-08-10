@@ -52,31 +52,31 @@ export default function Articles() {
                 </div>
             </section>
         );
-    }
-
-    return (
-        <section>
-            <div className="mt-12">
-                <h3 className="text-3xl py-1 dark:text-white">Latest Articles</h3>
-                <ul className="mb-8 pt-4">
-                    {items.map((item, index) => (
-                        <article key={index}>
-                            <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
-                            <div className="flex">
-                                <MotionLinker href={item.link}>
-                                    <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
-                                </MotionLinker>
-                            </div>
-                        </article>
-                    ))}
-                </ul>
-                <div className="flex">
-                    <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
-                        href={"https://kevin-jonathan.medium.com/"}>
-                        Read More on Medium
-                    </MotionLinker>
+    } else {
+        return (
+            <section>
+                <div className="mt-12">
+                    <h3 className="text-3xl py-1 dark:text-white">Latest Articles</h3>
+                    <ul className="mb-8 pt-4">
+                        {items.map((item, index) => (
+                            <article key={index}>
+                                <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
+                                <div className="flex">
+                                    <MotionLinker href={item.link}>
+                                        <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
+                                    </MotionLinker>
+                                </div>
+                            </article>
+                        ))}
+                    </ul>
+                    <div className="flex">
+                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
+                            href={"https://kevin-jonathan.medium.com/"}>
+                            Read More on Medium
+                        </MotionLinker>
+                    </div>
                 </div>
-            </div>
-        </section>
-    );
+            </section>
+        );
+    }
 }
