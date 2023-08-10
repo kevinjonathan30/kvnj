@@ -1,19 +1,15 @@
 import { useContext } from "react";
 import Image from "next/image";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { SiGmail, SiLinkedin, SiGithub, SiBehance, SiYoutube } from "react-icons/si";
+import { SiGmail, SiLinkedin, SiGithub, SiPixiv, SiYoutube } from "react-icons/si";
 import { MdClose, MdMinimize, MdSkipPrevious, MdSkipNext, MdPlayArrow } from "react-icons/md";
-import MotionWrapper from "./include/MotionWrapper";
+import MotionLinker from "./include/MotionLinker";
 import profile from "../public/images/Profile.png";
 import AppContext from "../context/AppContext";
 
 export default function Header() {
     const context = useContext(AppContext);
     const socialMediaLinks = [
-        {
-            icon: <SiBehance />,
-            link: "https://be.net/kevinjonathan3010",
-        },
         {
             icon: <SiGithub />,
             link: "https://github.com/KevinJonathan30",
@@ -27,6 +23,10 @@ export default function Header() {
             link: "https://www.linkedin.com/in/kevinjonathan3010",
         },
         {
+            icon: <SiPixiv />,
+            link: "https://www.pixiv.net/en/users/71310107",
+        },
+        {
             icon: <SiYoutube />,
             link: "https://www.youtube.com/@kevinjonathan3010",
         },
@@ -35,31 +35,23 @@ export default function Header() {
     return (
         <section>
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <MotionWrapper>
-                    <a href={"./"} rel="noopener">
-                        <h1 className="text-xl font-burtons">Kevin Jonathan</h1>
-                    </a>
-                </MotionWrapper>
+                <MotionLinker href={"#"} openInNewTab={false}>
+                    <h1 className="text-xl font-burtons">KevinJonathan</h1>
+                </MotionLinker>
 
                 <ul className="flex items-center">
                     <li>
-                        <MotionWrapper>
+                        <MotionLinker>
                             <BsFillMoonStarsFill onClick={() => {
                                 context.setDarkMode(!context.darkMode)
                             }} className="cursor-pointer text-2xl" />
-                        </MotionWrapper>
+                        </MotionLinker>
                     </li>
                     <li>
-                        <MotionWrapper>
-                            <a
-                                className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 ml-8 border-2 border-black"
-                                href={"/files/Kevin's Resume.pdf"}
-                                target={"_blank"}
-                                rel={"noopener noreferrer"}
-                            >
-                                Resume
-                            </a>
-                        </MotionWrapper>
+                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 ml-8 border-2 border-black"
+                            href={"/files/Kevin's Resume.pdf"}>
+                            Resume
+                        </MotionLinker>
                     </li>
                 </ul>
             </nav>
@@ -72,15 +64,13 @@ export default function Header() {
             </div>
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
                 {socialMediaLinks.map(({ icon, link }, index) => (
-                    <MotionWrapper key={index}>
-                        <a href={link} target="_blank" rel="noopener">
-                            {icon}
-                        </a>
-                    </MotionWrapper>
+                    <MotionLinker key={index} href={link}>
+                        {icon}
+                    </MotionLinker>
                 ))}
             </div>
             <div>
-                <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-8 mt-20 overflow-hidden md:h-8 md:w-72 border-2 border-black border-b-0">
+                <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-8 mt-16 overflow-hidden md:h-8 md:w-72 border-2 border-black border-b-0">
                     <div className="my-auto ml-auto mr-2">
                         <MdMinimize />
                     </div>
@@ -92,15 +82,21 @@ export default function Header() {
                     <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
                 </div>
                 <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-9 mb-20 overflow-hidden md:h-9 md:w-72 border-2 border-black border-t-0">
-                    <a href={"https://www.youtube.com/@kevinjonathan3010"} className="my-auto ml-auto mr-2" target="_blank" rel="noopener">
-                        <MdSkipPrevious />
-                    </a>
-                    <a href={"https://www.youtube.com/@kevinjonathan3010"} className="my-auto mr-2 text-xl bg-white rounded-full border-2 border-black p-0" target="_blank" rel="noopener">
-                        <MdPlayArrow />
-                    </a>
-                    <a href={"https://www.youtube.com/@kevinjonathan3010"} className="my-auto mr-auto" target="_blank" rel="noopener">
-                        <MdSkipNext />
-                    </a>
+                    <div className="my-auto ml-auto mr-2">
+                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                            <MdSkipPrevious />
+                        </MotionLinker>
+                    </div>
+                    <div className="my-auto mr-2 text-xl">
+                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                            <MdPlayArrow className="bg-white rounded-full border-2 border-black" />
+                        </MotionLinker>
+                    </div>
+                    <div className="my-auto mr-auto">
+                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                            <MdSkipNext />
+                        </MotionLinker>
+                    </div>
                 </div>
             </div>
         </section>

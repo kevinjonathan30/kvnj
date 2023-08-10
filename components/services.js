@@ -1,4 +1,4 @@
-import ServiceSection from './include/ServiceSection';
+import ServiceCard from './include/ServiceCard';
 import design from "../public/images/design.png";
 import code from "../public/images/code.png";
 import tutoring from "../public/images/tutoring.png";
@@ -16,31 +16,34 @@ export default function Services() {
                 </p>
             </div>
             <div className="lg:flex gap-10">
-                <ServiceSection
+                <ServiceCard
                     imageSrc={design}
                     imageAlt="design"
                     title="UI/UX Design"
                     description="Creating clean UI/UX designs suited for your needs following human interface design guidelines."
                     topicTitle="Design tools I use"
-                    topics={['Photoshop', 'Illustrator', 'Figma', 'Sketchbook']}
+                    topics={['Photoshop', 'Figma', 'Sketchbook']}
+                    href={"https://be.net/kevinjonathan3010"}
                 />
 
-                <ServiceSection
+                <ServiceCard
                     imageSrc={code}
                     imageAlt="code"
                     title="Software Development"
                     description="Building softwares, ranging from website and mobile application using clean code and architecture."
                     topicTitle="List of software topics I build"
                     topics={['Web Development', 'Android App Development', 'iOS App Development']}
+                    href={"https://github.com/KevinJonathan30"}
                 />
 
-                <ServiceSection
+                <ServiceCard
                     imageSrc={tutoring}
                     imageAlt="tutoring"
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topic I teach"
-                    topics={['Mathematics', 'Physics', 'Chemistry', 'Programming']}
+                    topics={['Mathematics', 'Physics', 'Programming']}
+                    href={"mailto:kevinjonathan3010@gmail.com?subject=Tutoring Inquiry&body=Can you teach me.."}
                 />
             </div>
         </section>

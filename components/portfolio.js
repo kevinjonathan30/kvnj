@@ -1,4 +1,4 @@
-import ImageLink from './include/ImageLink';
+import ImageLinker from './include/ImageLinker';
 import berkata from "../public/images/BerKata.jpg";
 import kohi from "../public/images/Ko-Hi.jpg";
 import juraku from "../public/images/Juraku.jpg";
@@ -19,35 +19,35 @@ export default function Portfolio() {
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
                 <div className="basis-1/3 flex-1">
-                    <ImageLink
+                    <ImageLinker
                         href={"https://www.behance.net/gallery/138798873/BerKata-Web"}
                         src={berkata}
                         alt="berkata"
                     />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <ImageLink
+                    <ImageLinker
                         href={"https://www.behance.net/gallery/134936171/Ko-Hi"}
                         src={kohi}
                         alt="kohi"
                     />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <ImageLink
+                    <ImageLinker
                         href={"https://www.behance.net/gallery/134151915/Juraku"}
                         src={juraku}
                         alt="juraku"
                     />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <ImageLink
+                    <ImageLinker
                         href={"https://www.behance.net/gallery/134145749/JadiRelawan"}
                         src={jadirelawan}
                         alt="jadirelawan"
                     />
                 </div>
                 <div className="basis-1/3 flex-1">
-                    <ImageLink
+                    <ImageLinker
                         href={"https://www.behance.net/gallery/128949225/SpeecHack"}
                         src={speechack}
                         alt="speechack"

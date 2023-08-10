@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import MotionWrapper from './include/MotionWrapper';
-
-const CACHE_KEY = 'mediumRss';
+import MotionLinker from './include/MotionLinker';
 
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
+
+    const CACHE_KEY = 'mediumRss';
 
     useEffect(() => {
         async function fetchData() {
@@ -44,16 +44,10 @@ export default function Articles() {
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                     </ul>
                     <div className="flex">
-                        <MotionWrapper>
-                            <a
-                                className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
-                                href={"https://kevin-jonathan.medium.com/"}
-                                target={"_blank"}
-                                rel={"noopener noreferrer"}
-                            >
-                                Read on Medium
-                            </a>
-                        </MotionWrapper>
+                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
+                            href={"https://kevin-jonathan.medium.com/"}>
+                            Read on Medium
+                        </MotionLinker>
                     </div>
                 </div>
             </section>
@@ -69,26 +63,18 @@ export default function Articles() {
                         <div key={index}>
                             <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                             <div className="flex">
-                                <MotionWrapper>
-                                    <a href={item.link} target={"_blank"}>
-                                        <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
-                                    </a>
-                                </MotionWrapper>
+                                <MotionLinker href={item.link}>
+                                    <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
+                                </MotionLinker>
                             </div>
                         </div>
                     ))}
                 </ul>
                 <div className="flex">
-                    <MotionWrapper>
-                        <a
-                            className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
-                            href={"https://kevin-jonathan.medium.com/"}
-                            target={"_blank"}
-                            rel={"noopener noreferrer"}
-                        >
-                            Read More on Medium
-                        </a>
-                    </MotionWrapper>
+                    <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
+                        href={"https://kevin-jonathan.medium.com/"}>
+                        Read More on Medium
+                    </MotionLinker>
                 </div>
             </div>
         </section>
