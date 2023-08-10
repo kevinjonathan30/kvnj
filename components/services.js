@@ -1,7 +1,5 @@
 import ServiceCard from './include/ServiceCard';
-import design from "../public/images/design.png";
-import code from "../public/images/code.png";
-import tutoring from "../public/images/tutoring.png";
+import { MdPalette, MdOutlineLaptopChromebook, MdSchool } from "react-icons/md";
 
 export default function Services() {
     return (
@@ -17,8 +15,7 @@ export default function Services() {
             </div>
             <div className="lg:flex gap-10">
                 <ServiceCard
-                    imageSrc={design}
-                    imageAlt="design"
+                    icon={<MdPalette className="mx-auto" />}
                     title="UI/UX Design"
                     description="Creating clean UI/UX designs suited for your needs following human interface design guidelines."
                     topicTitle="Design tools I use"
@@ -27,8 +24,7 @@ export default function Services() {
                 />
 
                 <ServiceCard
-                    imageSrc={code}
-                    imageAlt="code"
+                    icon={<MdOutlineLaptopChromebook className="mx-auto" />}
                     title="Software Development"
                     description="Building softwares, ranging from website and mobile application using clean code and architecture."
                     topicTitle="List of software topics I build"
@@ -37,8 +33,7 @@ export default function Services() {
                 />
 
                 <ServiceCard
-                    imageSrc={tutoring}
-                    imageAlt="tutoring"
+                    icon={<MdSchool className="mx-auto" />}
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topic I teach"

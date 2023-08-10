@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import MotionLinker from "./MotionLinker";
 
-export default function ServiceCard({ imageSrc, imageAlt, title, description, topicTitle, topics, href }) {
+export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
     return (
         <MotionLinker href={href}>
             <div className="text-center border-2 border-black p-10 my-10 bg-gray-50 dark:bg-gray-800 flex-1">
-                <Image src={imageSrc} width={100} height={100} className="mx-auto" alt={imageAlt} />
+                <div className="text-6xl md:text-8xl w-full dark:text-white">
+                    {icon}
+                </div>
                 <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-300">{title}</h3>
                 <p className="py-2 dark:text-gray-300">{description}</p>
                 {topics && topics.length > 0 && (
