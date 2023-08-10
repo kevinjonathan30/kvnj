@@ -1,14 +1,14 @@
 import Image from "next/image";
-import MotionLinker from './MotionLinker';
+import AnimatedAnchor from './AnimatedAnchor';
 
-export default function ImageLinker({ href, src, alt }) {
+export default function AnchorImage({ href, src, alt }) {
     return (
-        <MotionLinker href={href}>
+        <AnimatedAnchor href={href}>
             <Image
                 src={src}
                 className="object-cover border-2 border-black"
                 alt={alt}
             />
-        </MotionLinker>
+        </AnimatedAnchor>
     );
 }

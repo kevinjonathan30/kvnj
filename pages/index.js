@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Head from "next/head";
-import Header from "../components/header.js";
-import Services from "../components/services.js";
-import Articles from "../components/articles.js";
-import Portfolio from "../components/portfolio.js";
-import Footer from "../components/footer.js";
+import Header from "../components/Header.js";
+import Services from "../components/Services.js";
+import Articles from "../components/Articles.js";
+import Portfolio from "../components/Portfolio.js";
+import Footer from "../components/Footer.js";
 import AppContext from "../context/AppContext.js";
 import Layout from "./layout.js";
 

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
-import MotionLinker from './include/MotionLinker';
+import AnimatedAnchor from './include/AnimatedAnchor';
+import Button from './include/Button';
 
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);
 
-    const CACHE_KEY = 'mediumRss';
-
     useEffect(() => {
+        const abortController = new AbortController();
+        const signal = abortController.signal;
+        const CACHE_KEY = 'mediumRss';
+
         async function fetchData() {
             try {
                 let cachedData = localStorage.getItem(CACHE_KEY);
@@ -17,17 +20,21 @@ export default function Articles() {
                     setItems(cachedData.items.slice(0, 3));
                 }
 
-                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://kevin-jonathan.medium.com/feed');
+                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://kevin-jonathan.medium.com/feed', signal);
                 const data = await res.json();
                 const items = data.items.slice(0, 3);
                 setItems(items);
                 localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+                setError(false);
             } catch {
                 setError(true);
             }
         }
 
         fetchData();
+        return () => {
+            abortController.abort();
+        }
     }, []);
 
     function formatDate(date) {
@@ -44,10 +51,7 @@ export default function Articles() {
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                     </ul>
                     <div className="flex">
-                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
-                            href={"https://kevin-jonathan.medium.com/"}>
-                            Read on Medium
-                        </MotionLinker>
+                        <Button href={"https://kevin-jonathan.medium.com/"}>Read on Medium</Button>
                     </div>
                 </div>
             </section>
@@ -62,18 +66,15 @@ export default function Articles() {
                             <article key={index}>
                                 <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                                 <div className="flex">
-                                    <MotionLinker href={item.link}>
+                                    <AnimatedAnchor href={item.link}>
                                         <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
-                                    </MotionLinker>
+                                    </AnimatedAnchor>
                                 </div>
                             </article>
                         ))}
                     </ul>
                     <div className="flex">
-                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 border-2 border-black"
-                            href={"https://kevin-jonathan.medium.com/"}>
-                            Read More on Medium
-                        </MotionLinker>
+                        <Button href={"https://kevin-jonathan.medium.com/"}>Read More on Medium</Button>
                     </div>
                 </div>
             </section>

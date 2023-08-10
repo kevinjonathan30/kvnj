@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import MotionLinker from "./MotionLinker";
+import AnimatedAnchor from "./AnimatedAnchor";
 
 export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
     return (
-        <MotionLinker href={href}>
+        <AnimatedAnchor href={href}>
             <div className="text-center border-2 border-black p-10 my-10 bg-white dark:bg-gray-800 flex-1">
                 <div className="text-6xl md:text-8xl w-full dark:text-white">
                     {icon}
@@ -21,6 +21,6 @@ export default function ServiceCard({ icon, title, description, topicTitle, topi
                     </section>
                 )}
             </div>
-        </MotionLinker>
+        </AnimatedAnchor>
     );
 };

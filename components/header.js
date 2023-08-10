@@ -3,9 +3,10 @@ import Image from "next/image";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { SiGmail, SiLinkedin, SiGithub, SiPixiv, SiYoutube } from "react-icons/si";
 import { MdClose, MdMinimize, MdSkipPrevious, MdSkipNext, MdPlayArrow } from "react-icons/md";
-import MotionLinker from "./include/MotionLinker";
+import AnimatedAnchor from "./include/AnimatedAnchor";
 import profile from "../public/images/Profile.png";
 import AppContext from "../context/AppContext";
+import Button from './include/Button';
 
 export default function Header() {
     const context = useContext(AppContext);
@@ -35,23 +36,20 @@ export default function Header() {
     return (
         <section>
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <MotionLinker href={"#"} openInNewTab={false}>
+                <AnimatedAnchor href={"#"} openInNewTab={false}>
                     <h1 className="text-xl font-burtons">KevinJonathan</h1>
-                </MotionLinker>
+                </AnimatedAnchor>
 
                 <ul className="flex items-center">
                     <li>
-                        <MotionLinker>
+                        <AnimatedAnchor>
                             <BsFillMoonStarsFill onClick={() => {
                                 context.setDarkMode(!context.darkMode)
                             }} className="cursor-pointer text-2xl" />
-                        </MotionLinker>
+                        </AnimatedAnchor>
                     </li>
-                    <li>
-                        <MotionLinker className="bg-blue-600 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 ml-8 border-2 border-black"
-                            href={"/files/Kevin's Resume.pdf"}>
-                            Resume
-                        </MotionLinker>
+                    <li className={"ml-8"}>
+                        <Button href={"/files/Kevin's Resume.pdf"}>Resume</Button>
                     </li>
                 </ul>
             </nav>
@@ -64,9 +62,9 @@ export default function Header() {
             </div>
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
                 {socialMediaLinks.map(({ icon, link }, index) => (
-                    <MotionLinker key={index} href={link}>
+                    <AnimatedAnchor key={index} href={link}>
                         {icon}
-                    </MotionLinker>
+                    </AnimatedAnchor>
                 ))}
             </div>
             <div>
@@ -83,19 +81,19 @@ export default function Header() {
                 </div>
                 <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-9 mb-20 overflow-hidden md:h-9 md:w-72 border-2 border-black border-t-0">
                     <div className="my-auto ml-auto mr-2">
-                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
                             <MdSkipPrevious />
-                        </MotionLinker>
+                        </AnimatedAnchor>
                     </div>
                     <div className="my-auto mr-2 text-xl">
-                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
                             <MdPlayArrow className="bg-white rounded-full border-2 border-black" />
-                        </MotionLinker>
+                        </AnimatedAnchor>
                     </div>
                     <div className="my-auto mr-auto">
-                        <MotionLinker href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
                             <MdSkipNext />
-                        </MotionLinker>
+                        </AnimatedAnchor>
                     </div>
                 </div>
             </div>
