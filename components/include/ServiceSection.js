@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function ServiceSection({ imageSrc, imageAlt, title, description, topicTitle, topics }) {
     return (
-        <div className="text-center border-2 border-black p-10 my-10 bg-white dark:bg-gray-800 flex-1">
+        <div className="text-center border-2 border-black p-10 my-10 bg-gray-50 dark:bg-gray-800 flex-1">
             <Image src={imageSrc} width={100} height={100} className="mx-auto" alt={imageAlt} />
             <h3 className="text-lg font-medium pt-8 pb-2 dark:text-gray-300">{title}</h3>
             <p className="py-2 dark:text-gray-300">{description}</p>
