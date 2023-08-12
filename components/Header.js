@@ -36,7 +36,7 @@ export default function Header() {
     return (
         <section>
             <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <AnimatedAnchor href={"#"} openInNewTab={false}>
+                <AnimatedAnchor href={"./"} openInNewTab={false}>
                     <h1 className="text-xl font-burtons">KevinJonathan</h1>
                 </AnimatedAnchor>
 

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import AnimatedAnchor from "./AnimatedAnchor";
 
 export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
