@@ -29,7 +29,7 @@ export default function Header() {
         },
         {
             icon: <SiYoutube />,
-            link: "https://www.youtube.com/@kevinjonathan3010",
+            link: "https://www.youtube.com/@kev.journal",
         },
     ];
 
@@ -81,17 +81,17 @@ export default function Header() {
                 </div>
                 <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-9 mb-20 overflow-hidden md:h-9 md:w-72 border-2 border-black border-t-0">
                     <div className="my-auto ml-auto mr-2">
-                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kev.journal"}>
                             <MdSkipPrevious />
                         </AnimatedAnchor>
                     </div>
                     <div className="my-auto mr-2 text-xl">
-                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kev.journal"}>
                             <MdPlayArrow className="bg-white rounded-full border-2 border-black" />
                         </AnimatedAnchor>
                     </div>
                     <div className="my-auto mr-auto">
-                        <AnimatedAnchor href={"https://www.youtube.com/@kevinjonathan3010"}>
+                        <AnimatedAnchor href={"https://www.youtube.com/@kev.journal"}>
                             <MdSkipNext />
                         </AnimatedAnchor>
                     </div>
