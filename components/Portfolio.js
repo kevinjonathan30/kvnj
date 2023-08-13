@@ -10,10 +10,10 @@ export default function Portfolio() {
         <section>
             <div className="mt-20">
                 <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">UI/UX Design Portfolio</h3>
-                <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
                     Alongside being a software engineer, I also do UI/UX Design freelance for customers.
                 </p>
-                <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+                <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
                     Here are the list of projects that I have worked before related to UI/UX Design.
                 </p>
             </div>
