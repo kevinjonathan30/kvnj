@@ -64,10 +64,10 @@ export default function Articles() {
                     <ul className="mb-8 pt-4">
                         {items.map((item, index) => (
                             <article key={index}>
-                                <p className="text-sm font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
+                                <p className="text-sm md:text-base font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                                 <div className="flex">
                                     <AnimatedAnchor href={item.link}>
-                                        <h3 className="text-lg font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
+                                        <h3 className="text-lg md:text-xl font-medium pb-2 text-blue-500 dark:text-blue-400">{item.title}</h3>
                                     </AnimatedAnchor>
                                 </div>
                             </article>
