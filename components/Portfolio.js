@@ -9,7 +9,7 @@ export default function Portfolio() {
     return (
         <section>
             <div className="mt-20">
-                <h3 className="text-3xl py-1 dark:text-white">UI/UX Design Portfolio</h3>
+                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">UI/UX Design Portfolio</h3>
                 <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
                     Alongside being a software engineer, I also do <span className="text-blue-500 dark:text-blue-400">UI/UX Design </span> freelance for customers.
                 </p>

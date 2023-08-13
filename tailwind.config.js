@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: "class",
   content: [
@@ -8,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        burtons: "burtons"
+        burtons: "burtons",
+        gloriaHallelujah: "gloriahallelujah"
       }
     },
   },

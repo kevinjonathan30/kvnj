@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import '@/styles/globals.css';
+import '@/styles/fonts.css';
 import AppContext from '../context/AppContext';
 import Head from "next/head";
 import NProgress from "nprogress";
@@ -26,7 +27,7 @@ export default function App({ Component, pageProps }) {
     router.events.on('routeChangeStart', () => NProgress.start());
     router.events.on('routeChangeComplete', () => NProgress.done());
     router.events.on('routeChangeError', () => NProgress.done());
-    NProgress.configure({showSpinner:false})
+    NProgress.configure({ showSpinner: false })
   }, []);
 
   return (
