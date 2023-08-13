@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Image from "next/image";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { SiGmail, SiLinkedin, SiGithub, SiPixiv, SiYoutube } from "react-icons/si";
+import { SiGmail, SiLinkedin, SiGithub, SiBehance, SiYoutube } from "react-icons/si";
 import { MdClose, MdMinimize, MdSkipPrevious, MdSkipNext, MdPlayArrow } from "react-icons/md";
 import AnimatedAnchor from "./include/AnimatedAnchor";
 import profile from "../public/images/Profile.png";
@@ -11,6 +11,10 @@ import Button from './include/Button';
 export default function Header() {
     const context = useContext(AppContext);
     const socialMediaLinks = [
+        {
+            icon: <SiBehance />,
+            link: "https://be.net/kevinjonathan3010",
+        },
         {
             icon: <SiGithub />,
             link: "https://github.com/KevinJonathan30",
@@ -22,10 +26,6 @@ export default function Header() {
         {
             icon: <SiLinkedin />,
             link: "https://www.linkedin.com/in/kevinjonathan3010",
-        },
-        {
-            icon: <SiPixiv />,
-            link: "https://www.pixiv.net/en/users/71310107",
         },
         {
             icon: <SiYoutube />,
