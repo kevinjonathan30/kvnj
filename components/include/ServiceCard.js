@@ -3,7 +3,7 @@ import AnimatedAnchor from "./AnimatedAnchor";
 export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
     return (
         <AnimatedAnchor href={href}>
-            <div className="text-center border-2 border-black p-10 my-10 bg-white dark:bg-gray-800 flex-1">
+            <div className="text-center border-2 border-black p-10 my-10 bg-stone-50 dark:bg-gray-800 flex-1">
                 <div className="text-6xl md:text-8xl w-full dark:text-white">
                     {icon}
                 </div>

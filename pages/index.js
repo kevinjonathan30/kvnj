@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className={context.darkMode ? "dark" : ""}>
-      <main className="bg-gray-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+      <main className="bg-orange-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40">
         <motion.div className="fixed top-0 left-0 right-0 h-2 origin-left z-50 bg-blue-600 dark:bg-blue-700" style={{ scaleX }} />
         <Header />
         <Services />
