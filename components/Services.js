@@ -33,7 +33,7 @@ export default function Services() {
                     icon={<GiGraduateCap className="mx-auto" />}
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
-                    topicTitle="Topic I teach"
+                    topicTitle="Topics I teach"
                     topics={['Mathematics', 'Physics', 'Programming']}
                     href={"mailto:kevinjonathan3010@gmail.com?subject=Tutoring Inquiry&body=Can you teach me.."}
                 />
