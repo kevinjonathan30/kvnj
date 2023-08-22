@@ -9,7 +9,7 @@ export default function InternalServerError500() {
 
     return (
         <div className={context.darkMode ? "dark" : ""}>
-            <main className="bg-orange-50 px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
+            <main className="bg-orange-100 px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
                 <section>
                     <nav className="py-10 mb-12 flex justify-between dark:text-white">
                         <AnimatedAnchor href={"./"} openInNewTab={false}>
