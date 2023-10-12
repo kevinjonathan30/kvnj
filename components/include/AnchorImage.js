@@ -6,7 +6,7 @@ export default function AnchorImage({ href, src, alt }) {
         <AnimatedAnchor href={href}>
             <Image
                 src={src}
-                className="object-cover border-2 border-black"
+                className="object-cover border-2 border-black dark:border-white"
                 alt={alt}
             />
         </AnimatedAnchor>
