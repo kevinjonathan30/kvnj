@@ -1,12 +1,8 @@
-import { useContext } from "react";
-import { BsFillMoonStarsFill } from "react-icons/bs";
 import { SiGmail, SiLinkedin, SiGithub, SiBehance } from "react-icons/si";
 import AnimatedAnchor from "./include/AnimatedAnchor";
-import AppContext from "../context/AppContext";
-import Button from './include/Button';
+import Navigation from "./Navigation";
 
 export default function Header() {
-    const context = useContext(AppContext);
     const socialMediaLinks = [
         {
             icon: <SiBehance />,
@@ -28,24 +24,7 @@ export default function Header() {
 
     return (
         <section>
-            <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <AnimatedAnchor href={"./"} openInNewTab={false}>
-                    <h1 className="text-xl font-burtons">KevinJonathan</h1>
-                </AnimatedAnchor>
-
-                <ul className="flex items-center">
-                    <li>
-                        <AnimatedAnchor>
-                            <BsFillMoonStarsFill onClick={() => {
-                                context.setDarkMode(!context.darkMode)
-                            }} className="cursor-pointer text-2xl" />
-                        </AnimatedAnchor>
-                    </li>
-                    {/* <li className={"ml-8"}>
-                        <Button href={"/files/Kevin's Resume.pdf"}>Resume</Button>
-                    </li> */}
-                </ul>
-            </nav>
+            <Navigation />
             <div className="text-center p-10">
                 <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-600 font-semibold tracking-wide dark:text-blue-400 md:text-6xl">Kevin Jonathan</h2>
                 <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">Software Engineer</h3>
