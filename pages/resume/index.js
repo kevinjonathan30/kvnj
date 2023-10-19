@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import Header from "../../components/Header.js";
-import Articles from "../../components/Articles.js";
 import Footer from "../../components/Footer.js";
 import AppContext from "../../context/AppContext.js";
-import AnimatedAnchor from "@/components/include/AnimatedAnchor.js";
+import Navigation from "@/components/Navigation.js";
+import WinterEvent from "@/components/WinterEvent.js";
 
 export default function Home() {
     const context = useContext(AppContext);
@@ -17,9 +16,10 @@ export default function Home() {
 
     return (
         <div className={context.darkMode ? "dark" : ""}>
-            <main className="bg-orange-100 px-10 dark:bg-gray-900 min-h-screen md:px-20 lg:px-40">
+            <WinterEvent />
+            <main className="bg-blue-200 px-10 dark:bg-gray-900 min-h-screen md:px-20 lg:px-40">
                 <motion.div className="fixed top-0 left-0 right-0 h-2 origin-left z-50 bg-blue-600 dark:bg-blue-700" style={{ scaleX }} />
-                <Header />
+                <Navigation />
                 <div className="mt-12">
                     <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Work Experience</h3>
                     <ul className="mb-8 pt-4">
