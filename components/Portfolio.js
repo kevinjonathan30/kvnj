@@ -1,4 +1,5 @@
 import AnchorImage from './include/AnchorImage';
+import suryapersadainternusa from "../public/images/SuryaPersadaInternusa.png";
 import flicktix from "../public/images/FlickTix.jpg";
 import berkata from "../public/images/BerKata.jpg";
 import kohi from "../public/images/Ko-Hi.jpg";
@@ -19,6 +20,13 @@ export default function Portfolio() {
                 </p>
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+                <div className="basis-1/3 flex-1">
+                    <AnchorImage
+                        href={"https://www.behance.net/gallery/184369913/Surya-Persada-Internusa"}
+                        src={suryapersadainternusa}
+                        alt="suryapersadainternusa"
+                    />
+                </div>
                 <div className="basis-1/3 flex-1">
                     <AnchorImage
                         href={"https://www.behance.net/gallery/180373509/FlickTix"}
@@ -60,6 +68,8 @@ export default function Portfolio() {
                         src={speechack}
                         alt="speechack"
                     />
+                </div>
+                <div className="basis-1/3 flex-1">
                 </div>
             </div>
         </section>
