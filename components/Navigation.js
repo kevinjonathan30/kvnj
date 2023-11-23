@@ -21,9 +21,9 @@ export default function Navigation() {
                         }} className="cursor-pointer text-2xl" />
                     </AnimatedAnchor>
                 </li>
-                {/* <li className={"ml-8"}>
-                        <Button href={"/files/Kevin's Resume.pdf"}>Resume</Button>
-                    </li> */}
+                <li className={"ml-8"}>
+                    <Button href={"/portfolio/"} openInNewTab={false}>Portfolio</Button>
+                </li>
             </ul>
         </nav>
     );

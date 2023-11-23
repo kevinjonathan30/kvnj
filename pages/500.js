@@ -2,7 +2,6 @@ import { useContext } from "react";
 import AppContext from "../context/AppContext.js";
 import Button from '../components/include/Button';
 import Navigation from "@/components/Navigation";
-import WinterEvent from "@/components/WinterEvent.js";
 
 export default function InternalServerError500() {
     const context = useContext(AppContext);
@@ -10,7 +9,6 @@ export default function InternalServerError500() {
     return (
         <div className={context.darkMode ? "dark" : ""}>
             <main className="bg-blue-200 px-10 dark:bg-gray-900 md:px-20 lg:px-40 min-h-screen">
-                <WinterEvent />
                 <section>
                     <Navigation />
                     <div className="text-center p-10">

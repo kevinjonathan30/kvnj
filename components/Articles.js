@@ -45,7 +45,7 @@ export default function Articles() {
     if (error) {
         return (
             <section>
-                <div className="mt-12">
+                <div className="mt-12 pb-10">
                     <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Latest Articles</h3>
                     <ul className="mb-8">
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
@@ -59,7 +59,7 @@ export default function Articles() {
     } else {
         return (
             <section>
-                <div className="mt-12">
+                <div className="mt-12 pb-10">
                     <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Latest Articles</h3>
                     <ul className="mb-8 pt-4">
                         {items.map((item, index) => (

@@ -7,10 +7,19 @@ import AppContext from '../context/AppContext';
 import Head from "next/head";
 import NProgress from "nprogress";
 import { useRouter } from "next/router";
+import WinterEvent from "@/components/WinterEvent.js";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);
   const router = useRouter();
+  const { scrollYProgress } = useScroll();
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   const modeMe = (e) => {
     setDarkMode(!!e.matches);
@@ -42,6 +51,8 @@ export default function App({ Component, pageProps }) {
       </Head>
       <AnimatePresence mode="wait">
         <AppContext.Provider value={{ darkMode, setDarkMode }}>
+          <motion.div className="fixed top-0 left-0 right-0 h-2 origin-left z-50 bg-blue-600 dark:bg-blue-700" style={{ scaleX }} />
+          <WinterEvent />
           <Component {...pageProps} />
           <Analytics />
         </AppContext.Provider>
