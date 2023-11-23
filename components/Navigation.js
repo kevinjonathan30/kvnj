@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import Button from './include/Button';
-import AppContext from "../context/AppContext";
+import AppContext from "@/context/AppContext";
 import AnimatedAnchor from "./include/AnimatedAnchor";
 
 export default function Navigation() {

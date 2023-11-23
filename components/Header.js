@@ -1,23 +1,23 @@
-import { SiGmail, SiLinkedin, SiGithub, SiBehance } from "react-icons/si";
+import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import AnimatedAnchor from "./include/AnimatedAnchor";
 import Navigation from "./Navigation";
 
 export default function Header() {
     const socialMediaLinks = [
         {
-            icon: <SiBehance />,
+            icon: <FaBehanceSquare />,
             link: "https://be.net/kevinjonathan3010",
         },
         {
-            icon: <SiGithub />,
+            icon: <FaGithubSquare />,
             link: "https://github.com/KevinJonathan30",
         },
         {
-            icon: <SiGmail />,
+            icon: <FaEnvelopeSquare />,
             link: "mailto:kevinjonathan3010@gmail.com",
         },
         {
-            icon: <SiLinkedin />,
+            icon: <FaLinkedin />,
             link: "https://www.linkedin.com/in/kevinjonathan3010",
         },
     ];

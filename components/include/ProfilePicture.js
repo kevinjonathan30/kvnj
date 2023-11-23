@@ -1,7 +1,7 @@
 import Image from "next/image";
 import AnimatedAnchor from './AnimatedAnchor';
 import { MdClose, MdMinimize, MdSkipPrevious, MdSkipNext, MdPlayArrow } from "react-icons/md";
-import profile from "../../public/images/Profile.png";
+import profile from "@/public/images/Profile.png";
 
 export default function ProfilePicture() {
     return (

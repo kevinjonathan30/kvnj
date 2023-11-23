@@ -1,5 +1,5 @@
 import ServiceCard from './include/ServiceCard';
-import { GiPalette, GiLaptop, GiGraduateCap } from "react-icons/gi";
+import { FaCode, FaGraduationCap, FaPalette } from "react-icons/fa";
 
 export default function Services() {
     return (
@@ -12,7 +12,7 @@ export default function Services() {
             </div>
             <div className="lg:flex gap-10">
                 <ServiceCard
-                    icon={<GiPalette className="mx-auto" />}
+                    icon={<FaPalette className="mx-auto" />}
                     title="UI/UX Design"
                     description="Creating clean UI/UX designs suited for your needs following human interface design guidelines."
                     topicTitle="Design tools I use"
@@ -21,7 +21,7 @@ export default function Services() {
                 />
 
                 <ServiceCard
-                    icon={<GiLaptop className="mx-auto" />}
+                    icon={<FaCode className="mx-auto" />}
                     title="Software Development"
                     description="Building softwares, ranging from website and mobile application using clean code and architecture."
                     topicTitle="Software topics I build"
@@ -30,7 +30,7 @@ export default function Services() {
                 />
 
                 <ServiceCard
-                    icon={<GiGraduateCap className="mx-auto" />}
+                    icon={<FaGraduationCap className="mx-auto" />}
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"

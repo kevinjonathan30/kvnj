@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
+import Head from 'next/head';
+import NProgress from 'nprogress';
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
-import AppContext from '../context/AppContext';
-import Head from "next/head";
-import NProgress from "nprogress";
-import { useRouter } from "next/router";
-import WinterEvent from "@/components/WinterEvent.js";
-import { motion, useScroll, useSpring } from "framer-motion";
+import AppContext from '@/context/AppContext.js';
+import WinterEvent from '@/components/include/WinterEvent.js';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);
