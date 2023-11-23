@@ -1,4 +1,3 @@
-import AnchorImage from './include/AnchorImage';
 import suryapersadainternusa from "../public/images/SuryaPersadaInternusa.png";
 import flicktix from "../public/images/FlickTix.jpg";
 import berkata from "../public/images/BerKata.jpg";
@@ -6,8 +5,47 @@ import kohi from "../public/images/Ko-Hi.jpg";
 import juraku from "../public/images/Juraku.jpg";
 import jadirelawan from "../public/images/JadiRelawan.jpg";
 import speechack from "../public/images/SpeecHack.jpg";
+import AnchorImage from './include/AnchorImage';
 
 export default function Portfolio() {
+    const portfolioItems = [
+        {
+            href: "https://www.behance.net/gallery/184369913/Surya-Persada-Internusa",
+            src: suryapersadainternusa,
+            alt: "suryapersadainternusa"
+        },
+        {
+            href: "https://www.behance.net/gallery/180373509/FlickTix",
+            src: flicktix,
+            alt: "flicktix"
+        },
+        {
+            href: "https://www.behance.net/gallery/138798873/BerKata-Web",
+            src: berkata,
+            alt: "berkata"
+        },
+        {
+            href: "https://www.behance.net/gallery/134936171/Ko-Hi",
+            src: kohi,
+            alt: "kohi"
+        },
+        {
+            href: "https://www.behance.net/gallery/134151915/Juraku",
+            src: juraku,
+            alt: "juraku"
+        },
+        {
+            href: "https://www.behance.net/gallery/134145749/JadiRelawan",
+            src: jadirelawan,
+            alt: "jadirelawan"
+        },
+        {
+            href: "https://www.behance.net/gallery/128949225/SpeecHack",
+            src: speechack,
+            alt: "speechack"
+        },
+    ];
+
     return (
         <section>
             <div className="mt-20">
@@ -20,57 +58,14 @@ export default function Portfolio() {
                 </p>
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/184369913/Surya-Persada-Internusa"}
-                        src={suryapersadainternusa}
-                        alt="suryapersadainternusa"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/180373509/FlickTix"}
-                        src={flicktix}
-                        alt="flicktix"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/138798873/BerKata-Web"}
-                        src={berkata}
-                        alt="berkata"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/134936171/Ko-Hi"}
-                        src={kohi}
-                        alt="kohi"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/134151915/Juraku"}
-                        src={juraku}
-                        alt="juraku"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/134145749/JadiRelawan"}
-                        src={jadirelawan}
-                        alt="jadirelawan"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                    <AnchorImage
-                        href={"https://www.behance.net/gallery/128949225/SpeecHack"}
-                        src={speechack}
-                        alt="speechack"
-                    />
-                </div>
-                <div className="basis-1/3 flex-1">
-                </div>
+                {portfolioItems.map((item, index) => (
+                    <div className="basis-1/3 flex-1" key={index}>
+                        <AnchorImage href={item.href} src={item.src} alt={item.alt} />
+                    </div>
+                ))}
+                {portfolioItems.length % 2 !== 0 && (
+                    <div className="basis-1/3 flex-1"></div>
+                )}
             </div>
         </section>
     );
