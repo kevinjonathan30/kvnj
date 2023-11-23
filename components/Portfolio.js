@@ -60,7 +60,7 @@ export default function Portfolio() {
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
                 {portfolioItems.map((item, index) => (
                     <div className="basis-1/3 flex-1" key={index}>
-                        <AnchorImage href={item.href} src={item.src} alt={item.alt} />
+                        <AnchorImage {...item} />
                     </div>
                 ))}
                 {portfolioItems.length % 2 !== 0 && (
