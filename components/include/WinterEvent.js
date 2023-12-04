@@ -1,12 +1,32 @@
 import Snowfall from 'react-snowfall';
+import { useEffect, useState } from 'react';
 
 export default function WinterEvent() {
-    const currentDate = new Date();
-    const currentMonth = currentDate.getMonth();
+    const [shouldRenderSnowfall, setShouldRenderSnowfall] = useState(false);
 
-    const isWinter = currentMonth === 0 || currentMonth === 11;
+    const modeMe = (e) => {
+        setShouldRenderSnowfall(!e.matches);
+    };
 
-    if (isWinter) {
+    useEffect(() => {
+        const currentDate = new Date();
+        const currentMonth = currentDate.getMonth();
+        const isWinter = currentMonth === 0 || currentMonth === 11;
+
+        const matchMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const prefersReducedMotion = matchMedia.matches;
+
+        if (isWinter && !prefersReducedMotion) {
+            setShouldRenderSnowfall(true);
+        } else {
+            setShouldRenderSnowfall(false);
+        }
+
+        matchMedia.addEventListener("change", modeMe);
+        return () => matchMedia.removeEventListener("change", modeMe);
+    }, []);
+
+    if (shouldRenderSnowfall) {
         return (
             <Snowfall
                 snowflakeCount={50}
