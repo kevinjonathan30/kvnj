@@ -1,6 +1,6 @@
-import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
-import AnimatedAnchor from "./include/AnimatedAnchor";
-import Navigation from "./Navigation";
+import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import AnimatedAnchor from './include/AnimatedAnchor';
+import Navigation from './Navigation';
 
 export default function Header() {
     const socialMediaLinks = [

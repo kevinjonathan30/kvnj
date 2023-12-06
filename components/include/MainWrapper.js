@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import AppContext from "@/context/AppContext.js";
+import { useContext } from 'react';
+import AppContext from '@/context/AppContext';
 
 export default function MainWrapper({ children }) {
     const context = useContext(AppContext);

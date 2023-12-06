@@ -1,7 +1,7 @@
 import Button from '@/components/include/Button';
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import MainWrapper from "@/components/include/MainWrapper.js";
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import MainWrapper from '@/components/include/MainWrapper';
 
 export default function NotFound404() {
     return (

@@ -1,4 +1,4 @@
-import AnimatedAnchor from "./AnimatedAnchor";
+import AnimatedAnchor from './AnimatedAnchor';
 
 export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
     return (

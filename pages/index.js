@@ -1,8 +1,8 @@
-import Header from "@/components/Header.js";
-import Services from "@/components/Services.js";
-import Articles from "@/components/Articles.js";
-import Footer from "@/components/Footer.js";
-import MainWrapper from "@/components/include/MainWrapper.js";
+import Header from '@/components/Header';
+import Services from '@/components/Services';
+import Articles from '@/components/Articles';
+import Footer from '@/components/Footer';
+import MainWrapper from '@/components/include/MainWrapper';
 
 export default function Home() {
   return (

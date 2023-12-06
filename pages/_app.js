@@ -7,8 +7,8 @@ import Head from 'next/head';
 import NProgress from 'nprogress';
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
-import AppContext from '@/context/AppContext.js';
-import WinterEvent from '@/components/include/WinterEvent.js';
+import AppContext from '@/context/AppContext';
+import WinterEvent from '@/components/include/WinterEvent';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);

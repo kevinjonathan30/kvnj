@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import AnimatedAnchor from './AnimatedAnchor';
 
 export default function AnchorImage({ href, src, alt }) {

@@ -1,7 +1,7 @@
-import Footer from "@/components/Footer.js";
-import Navigation from "@/components/Navigation.js";
-import Portfolio from "@/components/Portfolio.js";
-import MainWrapper from "@/components/include/MainWrapper.js";
+import Footer from '@/components/Footer';
+import Navigation from '@/components/Navigation';
+import Portfolio from '@/components/Portfolio';
+import MainWrapper from '@/components/include/MainWrapper';
 import Button from '@/components/include/Button';
 
 export default function Home() {

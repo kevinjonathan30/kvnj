@@ -1,5 +1,5 @@
 import ServiceCard from './include/ServiceCard';
-import { FaCode, FaGraduationCap, FaPalette } from "react-icons/fa";
+import { FaCode, FaGraduationCap, FaPalette } from 'react-icons/fa';
 
 export default function Services() {
     return (

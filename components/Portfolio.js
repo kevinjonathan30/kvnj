@@ -1,10 +1,10 @@
-import suryapersadainternusa from "../public/images/SuryaPersadaInternusa.png";
-import flicktix from "@/public/images/FlickTix.jpg";
-import berkata from "@/public/images/BerKata.jpg";
-import kohi from "@/public/images/Ko-Hi.jpg";
-import juraku from "@/public/images/Juraku.jpg";
-import jadirelawan from "@/public/images/JadiRelawan.jpg";
-import speechack from "@/public/images/SpeecHack.jpg";
+import suryapersadainternusa from '../public/images/SuryaPersadaInternusa.png';
+import flicktix from '@/public/images/FlickTix.jpg';
+import berkata from '@/public/images/BerKata.jpg';
+import kohi from '@/public/images/Ko-Hi.jpg';
+import juraku from '@/public/images/Juraku.jpg';
+import jadirelawan from '@/public/images/JadiRelawan.jpg';
+import speechack from '@/public/images/SpeecHack.jpg';
 import AnchorImage from './include/AnchorImage';
 
 export default function Portfolio() {
