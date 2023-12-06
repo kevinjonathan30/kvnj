@@ -1,5 +1,6 @@
 import Button from '@/components/include/Button';
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import MainWrapper from "@/components/include/MainWrapper.js";
 
 export default function NotFound404() {
@@ -15,9 +16,10 @@ export default function NotFound404() {
                     </p>
                 </div>
                 <div className="flex justify-center mt-8">
-                    <Button href={"./"} openInNewTab={false}>Back to Site Home</Button>
+                    <Button href={"./"} openInNewTab={false}>Back to Home</Button>
                 </div>
             </section>
+            <Footer />
         </MainWrapper>
     );
 }

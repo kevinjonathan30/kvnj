@@ -18,6 +18,7 @@ export default function InternalServerError500() {
                     <Button href={"./"} openInNewTab={false}>Try Again</Button>
                 </div>
             </section>
+            <Footer />
         </MainWrapper>
     );
 }
