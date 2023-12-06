@@ -51,7 +51,7 @@ export default function Articles() {
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                     </ul>
                     <div className="flex">
-                        <Button href={"https://kevin-jonathan.medium.com/"}>Read on Medium</Button>
+                        <Button href={"https://kevin-jonathan.medium.com/"}>View on Medium</Button>
                     </div>
                 </div>
             </section>
@@ -74,7 +74,7 @@ export default function Articles() {
                         ))}
                     </ul>
                     <div className="flex">
-                        <Button href={"https://kevin-jonathan.medium.com/"}>Read More on Medium</Button>
+                        <Button href={"https://kevin-jonathan.medium.com/"}>View More</Button>
                     </div>
                 </div>
             </section>
