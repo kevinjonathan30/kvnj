@@ -15,7 +15,7 @@ export default function ProfilePicture() {
                 </div>
             </div>
             <div className="relative mx-auto bg-teal-100 w-64 h-48 overflow-hidden md:h-60 md:w-72 border-2 border-black">
-                <Image src={profile} layout="fill" objectFit="cover" alt="profile" />
+                <Image src={profile} layout="fill" objectFit="cover" alt="profile" placeholder="blur" />
             </div>
             <div className="relative mx-auto flex bg-blue-600 dark:bg-blue-400 w-64 h-9 mb-20 overflow-hidden md:h-9 md:w-72 border-2 border-black border-t-0">
                 <div className="my-auto ml-auto mr-2">

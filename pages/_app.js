@@ -7,6 +7,7 @@ import Head from 'next/head';
 import NProgress from 'nprogress';
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
+import '@/styles/nprogress.min.css';
 import AppContext from '@/context/AppContext';
 import WinterEvent from '@/components/include/WinterEvent';
 
@@ -36,7 +37,6 @@ export default function App({ Component, pageProps }) {
     router.events.on('routeChangeStart', () => NProgress.start());
     router.events.on('routeChangeComplete', () => NProgress.done());
     router.events.on('routeChangeError', () => NProgress.done());
-    NProgress.configure({ showSpinner: false })
   }, []);
 
   return (
@@ -47,7 +47,6 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, archive" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
       </Head>
       <AnimatePresence mode="wait">
         <AppContext.Provider value={{ darkMode, setDarkMode }}>

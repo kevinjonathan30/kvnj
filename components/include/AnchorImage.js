@@ -8,6 +8,7 @@ export default function AnchorImage({ href, src, alt }) {
                 src={src}
                 className="object-cover border-2 border-black dark:border-white"
                 alt={alt}
+                placeholder="blur"
             />
         </AnimatedAnchor>
     );
