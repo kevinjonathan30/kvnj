@@ -9,7 +9,7 @@ export default function AnimatedAnchor({ children, href, openInNewTab = true, cl
     };
 
     return (
-        <div className="transition-all motion-reduce:transition-none hover:scale-110 motion-reduce:hover:scale-100 active:scale-90 motion-reduce:active:scale-100 ease-in-out">
+        <div className="transition-all motion-reduce:transition-none hover:opacity-75 motion-reduce:hover:opacity-100 active:opacity-50 motion-reduce:active:opacity-100 ease-in-out">
             {href ? <Link {...anchorProps}>{children}</Link> : children}
         </div>
     );

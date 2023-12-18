@@ -33,3 +33,12 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(96, 165, 250, 0.8);
 }
+
+img {
+  border-bottom-left-radius: 15px 60px;
+  border-bottom-right-radius: 60px 15px;
+  border-top-left-radius: 60px 15px;
+  border-top-right-radius: 15px 60px;
+  height: auto;
+  max-width: 100%;
+}
