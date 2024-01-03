@@ -1,6 +1,5 @@
 import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import AnimatedAnchor from './include/AnimatedAnchor';
-import Navigation from './Navigation';
 
 export default function Header() {
     const socialMediaLinks = [
@@ -24,7 +23,6 @@ export default function Header() {
 
     return (
         <section>
-            <Navigation />
             <div className="text-center p-10">
                 <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide  md:text-6xl">Kevin Jonathan</h2>
                 <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">Software Engineer</h3>
