@@ -11,7 +11,7 @@ export default function WinterEvent() {
     useEffect(() => {
         const currentDate = new Date();
         const currentMonth = currentDate.getMonth();
-        const isWinter = currentMonth === 0 || currentMonth === 11;
+        const isWinter = currentMonth >= 0 && currentMonth <= 2 || currentMonth === 11;
 
         const matchMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
         const prefersReducedMotion = matchMedia.matches;
