@@ -16,7 +16,7 @@ export default function Services() {
                     title="UI/UX Design"
                     description="Creating clean UI/UX designs suited for your needs following human interface design guidelines."
                     topicTitle="Design tools I use"
-                    topics={['Photoshop', 'Figma', 'Sketchbook']}
+                    topics={['Photoshop', 'Figma', 'Adobe XD']}
                     href={"https://be.net/kevinjonathan3010"}
                 />
 
@@ -34,7 +34,7 @@ export default function Services() {
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"
-                    topics={['Mathematics & Physics', 'Computer Science', 'UX Design']}
+                    topics={['Mathematics & Physics', 'Computer Science', 'UI/UX Design']}
                     href={"https://www.superprof.co.id/lulusan-apple-academy-siap-mengajar-pemrograman-swift-dan-pengembangan-aplikasi-berbasis-ios.html"}
                 />
             </div>
