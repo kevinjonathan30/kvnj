@@ -34,8 +34,8 @@ export default function Services() {
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"
-                    topics={['Mathematics', 'Physics', 'Programming']}
-                    href={"mailto:kevinjonathan3010@gmail.com?subject=Tutoring Inquiry&body=Can you teach me.."}
+                    topics={['Mathematics & Physics', 'Computer Science', 'UX Design']}
+                    href={"https://www.superprof.co.id/lulusan-apple-academy-siap-mengajar-pemrograman-swift-dan-pengembangan-aplikasi-berbasis-ios.html"}
                 />
             </div>
         </section>
