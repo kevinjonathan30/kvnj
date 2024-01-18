@@ -1,4 +1,5 @@
 import suryapersadainternusa from '../public/images/SuryaPersadaInternusa.png';
+import codestroll from '../public/images/CodeStroll.png';
 import flicktix from '@/public/images/FlickTix.jpg';
 import berkata from '@/public/images/BerKata.jpg';
 import kohi from '@/public/images/Ko-Hi.jpg';
@@ -9,6 +10,11 @@ import AnchorImage from './include/AnchorImage';
 
 export default function Portfolio() {
     const portfolioItems = [
+        {
+            href: "https://www.behance.net/gallery/189307179/CodeStroll",
+            src: codestroll,
+            alt: "codestroll"
+        },
         {
             href: "https://www.behance.net/gallery/184369913/Surya-Persada-Internusa",
             src: suryapersadainternusa,
