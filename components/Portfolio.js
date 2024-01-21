@@ -1,4 +1,5 @@
 import suryapersadainternusa from '../public/images/SuryaPersadaInternusa.png';
+import touristicia from '../public/images/Touristicia.png';
 import codestroll from '../public/images/CodeStroll.png';
 import flicktix from '@/public/images/FlickTix.jpg';
 import berkata from '@/public/images/BerKata.jpg';
@@ -10,6 +11,11 @@ import AnchorImage from './include/AnchorImage';
 
 export default function Portfolio() {
     const portfolioItems = [
+        {
+            href: "https://www.behance.net/gallery/189504689/Touristicia",
+            src: touristicia,
+            alt: "touristicia"
+        },
         {
             href: "https://www.behance.net/gallery/189307179/CodeStroll",
             src: codestroll,
