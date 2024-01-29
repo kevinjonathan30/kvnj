@@ -35,7 +35,7 @@ export default function Services() {
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"
                     topics={['Mathematics & Physics', 'Computer Science', 'UI/UX Design']}
-                    href={"https://www.superprof.co.id/lulusan-apple-academy-siap-mengajar-pemrograman-swift-dan-pengembangan-aplikasi-berbasis-ios.html"}
+                    href={"https://www.dicoding.com/users/kevin-jonathan/academies"}
                 />
             </div>
         </section>
