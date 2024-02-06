@@ -16,13 +16,15 @@ export default function MainWrapper({ children }) {
   }, [router.asPath]);
 
   const isHome = path === '/';
+  const hasQuery = Object.keys(router.query).length === 0;
+  const showButton = !isHome && hasQuery;
 
   return (
     <div className={context.darkMode ? 'dark' : ''}>
       <main className="bg-blue-300 px-10 dark:bg-gray-900 min-h-screen md:px-20 lg:px-40">
         <Navigation />
         {children}
-        {!isHome && (
+        {showButton && (
           <div className="flex justify-center mt-8">
             <Button href={'./'} openInNewTab={false}>
               Back to Home
