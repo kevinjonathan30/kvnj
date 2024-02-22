@@ -27,7 +27,7 @@ export default function Header() {
                 <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide  md:text-6xl">Kevin Jonathan</h2>
                 <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">Software Engineer</h3>
                 <p className="text-md md:text-xl font-normal py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-lg mx-auto">
-                    My name is Kevin Jonathan, a highly motivated mobile development engineer specializing in iOS app development and Flutter. I hold a degree from Petra Christian University and have completed the prestigious Apple Developer Academy program.
+                    I am Kevin Jonathan, currently dedicated to my academic endeavors at Waseda University. I proudly hold a degree from Petra Christian University and have successfully completed the Apple Developer Academy program. Additionally, I contribute as an external code reviewer at Dicoding Indonesia.
                 </p>
             </div>
             <div className="text-4xl flex justify-center gap-4 py-3 text-gray-600 dark:text-gray-400">
