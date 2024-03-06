@@ -37,10 +37,10 @@ export default function Home() {
                             <span className="font-bold">Tanggal:</span> 24 Maret 2024.
                         </p>
                         <p className="text-md md:text-xl font-normal py-1 leading-8 text-gray-800 dark:text-gray-200">
-                            <span className="font-bold">Wektu:</span> Jam 11.00 (cekno panggonan parkire ora penuh).
+                            <span className="font-bold">Wektu:</span> Jam 11.00, cekno panggonan parkire ora penuh.
                         </p>
                         <p className="text-md md:text-xl font-normal py-1 leading-8 text-gray-800 dark:text-gray-200">
-                            <span className="font-bold">Info:</span> Reservasi rencanae ana ing jeneng "Kevin Jonathan". Di list nde grup sek yo cekno kula iso booking nang mall piro wong sing teko gawe meja e.
+                            <span className="font-bold">Info:</span> Reservasi rencanae ana ing jeneng Kevin Jonathan. Di list nde grup sek yo cekno kula iso booking nang mall piro wong sing teko gawe meja e.
                         </p>
                         <div className="py-5">
                             <Button href={"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240324T040000Z%2F20240324T070000Z&details=Jok%20telat%20rek%20lek%20wis%20absen%21%0AMarie%20jam%2014.00%20rencanae%20bebas%20seh%20kape%20lapo%2C%20mbuh%20billiard%2C%20bord%20gim%2C%20sak%20karepe%20wis.&location=Zenbu%20Pakuwon%20Mall&text=Acara%20Perpisahane%20Kevin"}>Ilingno aku</Button>
