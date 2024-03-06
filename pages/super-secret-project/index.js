@@ -9,7 +9,7 @@ export default function Home() {
         <div>
             <Head>
                 <title>Kevin Jonathan | Acara Perpisahane Kevin</title>
-                <meta name="description" content="Acara Perpisahan Kevin Jonathan" />
+                <meta name="description" content="Acara Perpisahane Kevin" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="robots" content="index, archive" />
                 <link rel="icon" href="/favicon.ico" />
