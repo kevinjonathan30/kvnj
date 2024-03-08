@@ -43,7 +43,7 @@ export default function Home() {
                             <span className="font-bold">Info:</span> Reservasi rencanae ana ing jeneng Kevin Jonathan. Di list nde grup sek yo cekno kula iso booking nang mall piro wong sing teko gawe meja e.
                         </p>
                         <div className="py-5">
-                            <Button href={"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240324T040000Z%2F20240324T070000Z&details=Jok%20telat%20rek%20lek%20wis%20absen%21%0AMarie%20jam%2014.00%20rencanae%20bebas%20seh%20kape%20lapo%2C%20mbuh%20billiard%2C%20bord%20gim%2C%20sak%20karepe%20wis.&location=Zenbu%20Pakuwon%20Mall&text=Acara%20Perpisahane%20Kevin"}>Ilingno aku</Button>
+                            <Button href={"https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20240324T040000Z%2F20240324T070000Z&details=Jok%20telat%20rek%20lek%20wis%20absen%21%0AMarie%20jam%2014.00%20rencanae%20bebas%20seh%20kape%20lapo%2C%20mbuh%20billiard%2C%20bord%20gim%2C%20sak%20karepe%20wis.&location=Zenbu%20House%20of%20Mozaru%20Pakuwon%20Mall%2C%20Pakuwon%20Mall%2C%20Jalan%20Mayjen%20Yono%20Suwoyo%20No.2%20Level%202M%2C%20Babatan%2C%20Kec.%20Wiyung%2C%20Surabaya%2C%20Jawa%20Timur%2060227%2C%20Indonesia&text=Acara%20Perpisahane%20Kevin"}>Ilingno aku</Button>
                         </div>
                         <div className="py-5">
                             <Button href={"https://www.youtube.com/watch?v=ID_L0aGI9bg&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=13&pp=iAQB"}>Ojok diklik iki</Button>
