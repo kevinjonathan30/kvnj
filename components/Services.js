@@ -34,8 +34,8 @@ export default function Services() {
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"
-                    topics={['Mathematics & Physics', 'Computer Science', 'UI/UX Design']}
-                    href={"https://www.dicoding.com/users/kevin-jonathan/academies"}
+                    topics={['Computer Science', 'UI/UX Design', 'Other (Request)']}
+                    href={"https://calendar.app.google/tWdyx95wB8hLPdHw8"}
                 />
             </div>
         </section>
