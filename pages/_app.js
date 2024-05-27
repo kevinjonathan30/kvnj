@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import '@/styles/globals.css';
@@ -31,14 +30,14 @@ export default function App({ Component, pageProps }) {
         <meta name="robots" content="index, archive" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AnimatePresence mode="wait">
+      <>
         <AppContext.Provider value={{ darkMode, setDarkMode }}>
-          <NextNProgress />
+          <NextNProgress color="rgb(96, 165, 250)" />
           <WinterEvent />
           <Component {...pageProps} />
           <Analytics />
         </AppContext.Provider>
-      </AnimatePresence>
+      </>
     </>
   );
 }
