@@ -1,4 +1,4 @@
-# NextJS-KevinPortfolio
+# KVNJ
 This is a simple portfolio website created using Next.js, React, and TailwindCSS.
 
 ## Live Demo
@@ -7,14 +7,14 @@ A live demo of the website can be found [here](https://kevin-jonathan.vercel.app
 ## Features
 - Responsive design
 - Dark and light mode toggle
-- Projects section with links to Github repos and live demos
+- Portfolio section with links to Behance projects
 - Built with Next.js for server-side rendering and fast performance
 - Styled with TailwindCSS
 
 ## Installation and Usage
 To run this project locally, follow these steps:
 
-- Clone this repository using `git clone https://github.com/KevinJonathan30/NextJS-KevinPortfolio.git`
+- Clone this repository using `git clone https://github.com/KevinJonathan30/kvnj.git`
 - Install dependencies using `npm install`
 - Run the development server using `npm run dev`
 - Open http://localhost:3000 in your browser to see the website.

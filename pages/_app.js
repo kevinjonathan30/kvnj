@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Kevin Jonathan | Software Engineer</title>
+        <title>KVNJ | Kevin Jonathan</title>
         <meta name="description" content="I am Kevin Jonathan, currently dedicated to my academic endeavors at Waseda University as both a student and a research assistant. I hold a degree from Petra Christian University and have successfully completed the Apple Developer Academy program. Additionally, I contribute as an external code reviewer for Dicoding Indonesia." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, archive" />

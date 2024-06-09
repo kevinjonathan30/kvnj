@@ -10,7 +10,7 @@ export default function Navigation() {
     return (
         <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <AnimatedAnchor href={"./"} openInNewTab={false}>
-                <h1 className="text-xl font-burtons">KevinJonathan</h1>
+                <h1 className="text-xl font-burtons font-bold">KVNJ</h1>
             </AnimatedAnchor>
 
             <ul className="flex items-center">
