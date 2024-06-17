@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import Button from './include/Button';
+import Parser from 'rss-parser';
+import fetch from 'isomorphic-unfetch';
 
 export default function Articles() {
     const [items, setItems] = useState([]);
@@ -14,19 +16,20 @@ export default function Articles() {
         async function fetchData() {
             try {
                 let cachedData = localStorage.getItem(CACHE_KEY);
-
                 if (cachedData) {
                     cachedData = JSON.parse(cachedData);
                     setItems(cachedData.items.slice(0, 3));
                 }
 
-                const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://kevin-jonathan.medium.com/feed', signal);
-                const data = await res.json();
-                const items = data.items.slice(0, 3);
+                const response = await fetch("https://kevin-jonathan.vercel.app/api/rss", signal);
+                const xml = await response.text();
+                const feed = await Parser.parseString(xml);
+                const items = feed.items.slice(0, 3);
                 setItems(items);
                 localStorage.setItem(CACHE_KEY, JSON.stringify(data));
                 setError(false);
             } catch {
+                console.log(error)
                 setError(true);
             }
         }
