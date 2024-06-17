@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import Button from './include/Button';
-import Parser from 'rss-parser';
-import fetch from 'isomorphic-unfetch';
 
 export default function Articles() {
     const [items, setItems] = useState([]);
@@ -14,13 +12,16 @@ export default function Articles() {
 
         async function fetchData() {
             try {
-                const response = await fetch("https://kevin-jonathan.vercel.app/api/rss", signal);
-                const xml = await response.text();
-                const feed = await Parser.parseString(xml);
-                const items = feed.items.slice(0, 3);
+                const response = await fetch("https://kevin-jonathan.vercel.app/api/rss", { signal });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                const items = data.slice(0, 3); // Adjust the number of items as needed
                 setItems(items);
                 setError(false);
-            } catch {
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
                 setError(true);
             }
         }
@@ -28,11 +29,11 @@ export default function Articles() {
         fetchData();
         return () => {
             abortController.abort();
-        }
+        };
     }, []);
 
     function formatDate(date) {
-        var options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(date).toLocaleDateString([], options);
     }
 
