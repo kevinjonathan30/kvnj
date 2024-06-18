@@ -11,7 +11,7 @@ export default function AnchorImage({ href, src, alt }) {
                 height={0}
                 alt={alt}
                 sizes={"100vw"}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '100%', height: '100%' }}
             />
         </AnimatedAnchor>
     );

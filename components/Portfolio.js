@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnchorImage from './include/AnchorImage';
+import Button from './include/Button';
 
 export default function Portfolio() {
     const [items, setItems] = useState([]);
@@ -52,27 +53,43 @@ export default function Portfolio() {
         };
     }, []);
 
-    return (
-        <section>
-            <div className="mt-20">
-                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Portfolio List</h3>
-                <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    Alongside being a software engineer, I also do UI/UX Design freelance for customers.
-                </p>
-                <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    Here are the list of projects that I have worked before related to software or UI/UX design.
-                </p>
-            </div>
-            <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-                {items.map((item, index) => (
-                    <div className="basis-1/3 flex-1" key={index}>
-                        <AnchorImage href={item.href} src={item.src} alt={item.alt} />
-                    </div>
-                ))}
-                {items.length % 2 !== 0 && (
-                    <div className="basis-1/3 flex-1"></div>
-                )}
-            </div>
-        </section>
-    );
+    if (error) {
+        return (
+            <section>
+                <div className="mt-20">
+                    <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Portfolio List</h3>
+                </div>
+                <ul className="mb-8">
+                    <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
+                </ul>
+                <div className="flex">
+                    <Button href={"https://www.behance.net/kevinjonathan3010"}>View on Behance</Button>
+                </div>
+            </section>
+        );
+    } else {
+        return (
+            <section>
+                <div className="mt-20">
+                    <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Portfolio List</h3>
+                    <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
+                        Alongside being a software engineer, I also do UI/UX Design freelance for customers.
+                    </p>
+                    <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
+                        Here are the list of projects that I have worked before related to software or UI/UX design.
+                    </p>
+                </div>
+                <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+                    {items.map((item, index) => (
+                        <div className="basis-1/3 flex-1" key={index}>
+                            <AnchorImage href={item.href} src={item.src} alt={item.alt} />
+                        </div>
+                    ))}
+                    {items.length % 2 !== 0 && (
+                        <div className="basis-1/3 flex-1"></div>
+                    )}
+                </div>
+            </section>
+        );
+    }
 }
