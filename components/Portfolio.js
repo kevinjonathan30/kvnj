@@ -1,62 +1,56 @@
-import suryapersadainternusa from '../public/images/SuryaPersadaInternusa.jpg';
-import touristicia from '../public/images/Touristicia.jpg';
-import codestroll from '../public/images/CodeStroll.jpg';
-import flicktix from '@/public/images/FlickTix.jpg';
-import berkata from '@/public/images/BerKata.jpg';
-import kohi from '@/public/images/Ko-Hi.jpg';
-import juraku from '@/public/images/Juraku.jpg';
-import jadirelawan from '@/public/images/JadiRelawan.jpg';
-import speechack from '@/public/images/SpeecHack.jpg';
+import { useEffect, useState } from 'react';
 import AnchorImage from './include/AnchorImage';
 
 export default function Portfolio() {
-    const portfolioItems = [
-        {
-            href: "https://www.behance.net/gallery/189504689/Touristicia",
-            src: touristicia,
-            alt: "touristicia"
-        },
-        {
-            href: "https://www.behance.net/gallery/189307179/CodeStroll",
-            src: codestroll,
-            alt: "codestroll"
-        },
-        {
-            href: "https://www.behance.net/gallery/184369913/Surya-Persada-Internusa",
-            src: suryapersadainternusa,
-            alt: "suryapersadainternusa"
-        },
-        {
-            href: "https://www.behance.net/gallery/180373509/FlickTix",
-            src: flicktix,
-            alt: "flicktix"
-        },
-        {
-            href: "https://www.behance.net/gallery/138798873/BerKata-Web",
-            src: berkata,
-            alt: "berkata"
-        },
-        {
-            href: "https://www.behance.net/gallery/134936171/Ko-Hi",
-            src: kohi,
-            alt: "kohi"
-        },
-        {
-            href: "https://www.behance.net/gallery/134151915/Juraku",
-            src: juraku,
-            alt: "juraku"
-        },
-        {
-            href: "https://www.behance.net/gallery/134145749/JadiRelawan",
-            src: jadirelawan,
-            alt: "jadirelawan"
-        },
-        {
-            href: "https://www.behance.net/gallery/128949225/SpeecHack",
-            src: speechack,
-            alt: "speechack"
-        },
-    ];
+    const [items, setItems] = useState([]);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        const signal = abortController.signal;
+
+        async function fetchData() {
+            try {
+                const response = await fetch("/api/behance/rss", { signal });
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const rssItems = await response.json();
+                const imgRegex = /<img[^>]+src=['"]([^'"]+)['"]/;
+
+                // Array to hold processed items
+                let processedItems = [];
+
+                // Process each RSS item
+                rssItems.forEach(item => {
+                    // Extract image URL from description
+                    const match = imgRegex.exec(item.content);
+                    if (match) {
+                        let imageUrl = match[1].replace('/404/', '/original/');
+                        let processedItem = {
+                            href: item.link,
+                            src: imageUrl,
+                            alt: item.title
+                        };
+                        // Push processed item into the array
+                        processedItems.push(processedItem);
+                    }
+                });
+
+                // Output the processed items as JSON
+                setItems(processedItems);
+                setError(false);
+            } catch (error) {
+                console.error('Failed to fetch data:', error);
+                setError(true);
+            }
+        }
+
+        fetchData();
+        return () => {
+            abortController.abort();
+        };
+    }, []);
 
     return (
         <section>
@@ -70,12 +64,12 @@ export default function Portfolio() {
                 </p>
             </div>
             <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-                {portfolioItems.map((item, index) => (
+                {items.map((item, index) => (
                     <div className="basis-1/3 flex-1" key={index}>
-                        <AnchorImage {...item} />
+                        <AnchorImage href={item.href} src={item.src} alt={item.alt} />
                     </div>
                 ))}
-                {portfolioItems.length % 2 !== 0 && (
+                {items.length % 2 !== 0 && (
                     <div className="basis-1/3 flex-1"></div>
                 )}
             </div>

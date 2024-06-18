@@ -3,12 +3,15 @@ import AnimatedAnchor from './AnimatedAnchor';
 
 export default function AnchorImage({ href, src, alt }) {
     return (
-        <AnimatedAnchor href={href}>
+        <AnimatedAnchor href={href} >
             <Image
                 src={src}
                 className="object-cover border-2 border-gray-900 dark:border-blue-100"
+                width={0}
+                height={0}
                 alt={alt}
-                placeholder="blur"
+                sizes={"100vw"}
+                style={{ width: '100%', height: 'auto' }}
             />
         </AnimatedAnchor>
     );

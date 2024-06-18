@@ -12,7 +12,7 @@ export default function Articles() {
 
         async function fetchData() {
             try {
-                const response = await fetch("https://kevin-jonathan.vercel.app/api/rss", { signal });
+                const response = await fetch("/api/medium/rss", { signal });
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

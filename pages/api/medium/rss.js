@@ -1,4 +1,3 @@
-// pages/api/rss.js
 import Parser from 'rss-parser';
 import fetch from 'isomorphic-unfetch';
 
