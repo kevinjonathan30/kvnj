@@ -1,5 +1,4 @@
 import Parser from 'rss-parser';
-import fetch from 'isomorphic-unfetch';
 
 const parser = new Parser();
 
