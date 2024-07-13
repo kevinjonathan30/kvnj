@@ -42,7 +42,7 @@ export default function Navigation() {
 
             </div>
 
-            <div className="fixed inset-0 z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }}>
+            <div className="fixed inset-0 z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
                 <div
                     className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-200 dark:bg-gray-800 text-white transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
@@ -50,7 +50,7 @@ export default function Navigation() {
                     <Button onClick={closeMenu} useStyle={false}>
                         <BsChevronBarRight className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 absolute top-5 right-5 text-5xl" />
                     </Button>
-                    <ul className="text-center mt-8" onClick={closeMenu}>
+                    <ul className="text-center mt-8">
                         <li className="mb-12">
                             <AnimatedAnchor href={"./"} openInNewTab={false}>
                                 <h1 className="text-4xl font-burtons font-bold text-gray-900 dark:text-blue-50">KVNJ</h1>
