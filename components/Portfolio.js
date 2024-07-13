@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnchorImage from './include/AnchorImage';
-import Button from './include/Button';
+import AnchorButton from './include/AnchorButton';
 
 export default function Portfolio() {
     const [items, setItems] = useState([]);
@@ -63,7 +63,7 @@ export default function Portfolio() {
                     <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                 </ul>
                 <div className="flex">
-                    <Button href={"https://www.behance.net/kevinjonathan3010"}>View on Behance</Button>
+                    <AnchorButton href={"https://www.behance.net/kevinjonathan3010"}>View on Behance</AnchorButton>
                 </div>
             </section>
         );

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppContext from '@/context/AppContext';
-import Button from '@/components/include/Button';
+import AnchorButton from '@/components/include/AnchorButton';
 import Footer from '@/components/Footer';
 import Navigation from '../Navigation';
 
@@ -26,9 +26,9 @@ export default function MainWrapper({ children }) {
         {children}
         {showButton && (
           <div className="flex justify-center mt-8">
-            <Button href={'./'} openInNewTab={false}>
+            <AnchorButton href={'./'} openInNewTab={false}>
               Back to Home
-            </Button>
+            </AnchorButton>
           </div>
         )}
         <Footer />

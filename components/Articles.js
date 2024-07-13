@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import AnimatedAnchor from './include/AnimatedAnchor';
-import Button from './include/Button';
+import AnchorButton from './include/AnchorButton';
 
 export default function Articles() {
     const [items, setItems] = useState([]);
@@ -17,7 +17,7 @@ export default function Articles() {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                const items = data.slice(0, 3); // Adjust the number of items as needed
+                const items = data.slice(0, 10); // Adjust the number of items as needed
                 setItems(items);
                 setError(false);
             } catch (error) {
@@ -46,7 +46,7 @@ export default function Articles() {
                         <p className="pt-4 dark:text-white">Failed to fetch data, please try again later.</p>
                     </ul>
                     <div className="flex">
-                        <Button href={"https://kevin-jonathan.medium.com/"}>View on Medium</Button>
+                        <AnchorButton href={"https://kevin-jonathan.medium.com/"}>View on Medium</AnchorButton>
                     </div>
                 </div>
             </section>
@@ -69,7 +69,7 @@ export default function Articles() {
                         ))}
                     </ul>
                     <div className="flex">
-                        <Button href={"https://kevin-jonathan.medium.com/"}>View More</Button>
+                        <AnchorButton href={"https://kevin-jonathan.medium.com/"}>View More</AnchorButton>
                     </div>
                 </div>
             </section>
