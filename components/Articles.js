@@ -1,19 +1,10 @@
 import { useEffect, useState } from 'react';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import AnchorButton from './include/AnchorButton';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
-const slideUpVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-};
 
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { ref, inView } = useInView({ triggerOnce: true });
-    const controls = useAnimation();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -41,42 +32,30 @@ export default function Articles() {
         };
     }, []);
 
-    useEffect(() => {
-        // Animate when in view
-        if (inView) {
-            controls.start('visible');
-        } else {
-            controls.start('hidden');
-        }
-    }, [controls, inView]);
-
     return (
-        <section ref={ref}>
+        <section>
             <div className="mt-12 pb-10">
                 <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Latest Articles</h3>
                 {loading ? (
-                    <div className="flex justify-center items-center h-64">
-                        <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">Loading...</p>
+                    <div className="flex items-center mb-8">
+                        <div className="mr-4">
+                            <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">Loading...</p>
+                        </div>
+                        <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-10 w-10"></div>
                     </div>
                 ) : (
-                    <motion.ul
-                        className="mb-8 pt-4"
-                        initial="hidden"
-                        animate={controls}
-                        variants={slideUpVariants}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
+                    <ul className="mb-8 pt-4">
                         {items.map((item, index) => (
-                            <motion.article key={index} className="mb-4">
+                            <li key={index} className="mb-4">
                                 <p className="text-sm md:text-base font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                                 <div className="flex">
                                     <AnimatedAnchor href={item.link}>
                                         <h3 className="text-lg md:text-xl font-medium pb-2 text-blue-700 dark:text-blue-400">{item.title}</h3>
                                     </AnimatedAnchor>
                                 </div>
-                            </motion.article>
+                            </li>
                         ))}
-                    </motion.ul>
+                    </ul>
                 )}
                 <div className="flex">
                     <AnchorButton href={"https://kevin-jonathan.medium.com/"}>View More</AnchorButton>
