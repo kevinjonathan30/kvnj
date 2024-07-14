@@ -41,7 +41,6 @@ export default function Articles() {
                         <div className="mr-4">
                             <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">Loading...</p>
                         </div>
-                        <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-10 w-10"></div>
                     </div>
                 ) : (
                     <ul className="mb-8 pt-4">
