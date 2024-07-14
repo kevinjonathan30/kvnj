@@ -92,7 +92,7 @@ export default function Navigation() {
                             initial="hidden"
                             animate={menuControls}
                             variants={slideUpVariants}
-                            transition={{ duration: 0.5, delay: 0.2 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/portfolio/"} openInNewTab={false}>Portfolio</AnimatedAnchor>
                         </motion.li>
@@ -101,7 +101,7 @@ export default function Navigation() {
                             initial="hidden"
                             animate={menuControls}
                             variants={slideUpVariants}
-                            transition={{ duration: 0.5, delay: 0.4 }}
+                            transition={{ duration: 0.5, delay: 0.5 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/articles/"} openInNewTab={false}>Articles</AnimatedAnchor>
                         </motion.li>
