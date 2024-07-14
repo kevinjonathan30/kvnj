@@ -58,8 +58,8 @@ export default function Navigation() {
             >
                 <ul>
                     <li>
-                        <Button onClick={openMenu} useStyle={false}>
-                            <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                        <Button onClick={menuOpen ? closeMenu : openMenu} useStyle={false}>
+                            {menuOpen ? <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" /> : <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />}
                         </Button>
                     </li>
                     <li>
@@ -72,7 +72,7 @@ export default function Navigation() {
                 </ul>
             </motion.div>
 
-            <div className="fixed inset-0 z-50 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
+            <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
                 <motion.div
                     className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
@@ -81,10 +81,7 @@ export default function Navigation() {
                     variants={slideUpVariants}
                     transition={{ duration: 0.5 }}
                 >
-                    <Button onClick={closeMenu} useStyle={false}>
-                        <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 absolute top-5 right-5 text-5xl" />
-                    </Button>
-                    <ul className="text-center mt-8">
+                    <ul className="text-center mt-12">
                         <li className="mb-12">
                             <AnimatedAnchor href={"./"} openInNewTab={false}>
                                 <h1 className="text-4xl font-burtons font-bold text-gray-900 dark:text-blue-50">KVNJ</h1>
