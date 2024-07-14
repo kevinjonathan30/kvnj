@@ -74,7 +74,7 @@ export default function Navigation() {
 
             <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
                 <motion.div
-                    className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+                    className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-all duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     initial="hidden"
                     animate={menuControls}
