@@ -14,7 +14,6 @@ export default function Articles() {
     const [loading, setLoading] = useState(true);
     const { ref, inView } = useInView({ triggerOnce: true });
     const controls = useAnimation();
-    const [allLoaded, setAllLoaded] = useState(false); // Track if all items are loaded
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -43,22 +42,13 @@ export default function Articles() {
     }, []);
 
     useEffect(() => {
-        // Check if all items are loaded
-        const allItemsLoaded = items.every(item => item.hasOwnProperty('title'));
-        if (allItemsLoaded) {
-            setAllLoaded(true);
-        } else {
-            setAllLoaded(false);
-        }
-    }, [items]);
-
-    useEffect(() => {
-        if (allLoaded && inView && controls) { // Ensure controls is defined before calling start
+        // Animate when in view
+        if (inView) {
             controls.start('visible');
-        } else if (!inView && controls) {
+        } else {
             controls.start('hidden');
         }
-    }, [controls, allLoaded, inView]);
+    }, [controls, inView]);
 
     return (
         <section ref={ref}>
