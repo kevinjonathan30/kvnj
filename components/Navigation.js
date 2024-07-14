@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { BsFillMoonStarsFill, BsGridFill } from 'react-icons/bs';
+import { CgDarkMode } from "react-icons/cg";
+import { RiMenu4Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import Button from './include/Button';
 import AppContext from '@/context/AppContext';
@@ -58,14 +59,14 @@ export default function Navigation() {
                 <ul>
                     <li>
                         <Button onClick={openMenu} useStyle={false}>
-                            <BsGridFill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                            <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                         </Button>
                     </li>
                     <li>
                         <Button onClick={() => {
                             context.setDarkMode(!context.darkMode)
                         }} useStyle={false}>
-                            <BsFillMoonStarsFill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                         </Button>
                     </li>
                 </ul>
