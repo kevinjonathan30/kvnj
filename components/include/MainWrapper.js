@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { motion, useAnimation } from 'framer-motion'; // Import motion components
+import { useInView } from 'react-intersection-observer';
 import AppContext from '@/context/AppContext';
 import AnchorButton from '@/components/include/AnchorButton';
 import Footer from '@/components/Footer';
@@ -19,17 +21,39 @@ export default function MainWrapper({ children }) {
   const hasQuery = Object.keys(router.query).length === 0;
   const showButton = !isHome && hasQuery;
 
+  // Animation controls
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
   return (
     <div className={context.darkMode ? 'dark' : ''}>
       <main className="bg-blue-100 px-10 dark:bg-gray-900 min-h-screen md:px-20 lg:px-40">
         <Navigation />
         {children}
         {showButton && (
-          <div className="flex justify-center mt-8">
+          <motion.div
+            ref={ref}
+            className="flex justify-center mt-8"
+            initial="hidden"
+            animate={controls}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 1 }}
+          >
             <AnchorButton href={'./'} openInNewTab={false}>
               Back to Home
             </AnchorButton>
-          </div>
+          </motion.div>
         )}
         <Footer />
       </main>
