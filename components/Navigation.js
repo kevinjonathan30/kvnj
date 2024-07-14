@@ -72,9 +72,9 @@ export default function Navigation() {
                 </ul>
             </motion.div>
 
-            <div className="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
+            <div className="fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
                 <motion.div
-                    className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-all duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+                    className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-colors duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     initial="hidden"
                     animate={menuControls}
@@ -92,7 +92,7 @@ export default function Navigation() {
                             initial="hidden"
                             animate={menuControls}
                             variants={slideUpVariants}
-                            transition={{ duration: 0.5, delay: 0.5 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/portfolio/"} openInNewTab={false}>Portfolio</AnimatedAnchor>
                         </motion.li>
@@ -101,7 +101,7 @@ export default function Navigation() {
                             initial="hidden"
                             animate={menuControls}
                             variants={slideUpVariants}
-                            transition={{ duration: 0.5, delay: 0.5 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/articles/"} openInNewTab={false}>Articles</AnimatedAnchor>
                         </motion.li>
