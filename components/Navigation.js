@@ -8,7 +8,7 @@ import AppContext from '@/context/AppContext';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import { useInView } from 'react-intersection-observer';
 
-const slideLeftVariants = {
+const slideUpVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
 };
@@ -53,7 +53,7 @@ export default function Navigation() {
                 className='fixed inset-y-5 right-0 md:right-5 z-50'
                 initial="hidden"
                 animate={controls}
-                variants={slideLeftVariants}
+                variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
                 <ul>
@@ -78,7 +78,7 @@ export default function Navigation() {
                         }`}
                     initial="hidden"
                     animate={menuControls}
-                    variants={slideLeftVariants}
+                    variants={slideUpVariants}
                     transition={{ duration: 0.5 }}
                 >
                     <Button onClick={closeMenu} useStyle={false}>
@@ -94,7 +94,7 @@ export default function Navigation() {
                             className="mb-8"
                             initial="hidden"
                             animate={menuControls}
-                            variants={slideLeftVariants}
+                            variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/portfolio/"} openInNewTab={false}>Portfolio</AnimatedAnchor>
@@ -103,7 +103,7 @@ export default function Navigation() {
                             className="mb-8"
                             initial="hidden"
                             animate={menuControls}
-                            variants={slideLeftVariants}
+                            variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
                             <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/articles/"} openInNewTab={false}>Articles</AnimatedAnchor>
