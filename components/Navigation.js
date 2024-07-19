@@ -42,11 +42,19 @@ export default function Navigation() {
 
     return (
         <>
-            <nav className="py-10 mb-12 flex justify-between dark:text-white">
-                <AnimatedAnchor href={"./"} openInNewTab={false}>
-                    <h1 className="text-xl font-burtons font-bold">KVNJ</h1>
-                </AnimatedAnchor>
-            </nav>
+            <motion.div
+                ref={ref}
+                initial="hidden"
+                animate={controls}
+                variants={slideUpVariants}
+                transition={{ duration: 0.5, delay: 0.1 }}
+            >
+                <nav className="py-10 mb-12 flex justify-between dark:text-white">
+                    <AnimatedAnchor href={"./"} openInNewTab={false}>
+                        <h1 className="text-xl font-burtons font-bold">KVNJ</h1>
+                    </AnimatedAnchor>
+                </nav>
+            </motion.div>
 
             <motion.div
                 ref={ref}
