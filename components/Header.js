@@ -21,7 +21,7 @@ export default function Header() {
         },
         {
             icon: <FaEnvelopeSquare />,
-            link: "mailto:kevinjonathan3010@gmail.com",
+            link: "mailto:kevinjonathan@ymail.ne.jp",
         },
         {
             icon: <FaLinkedin />,
