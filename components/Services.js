@@ -63,7 +63,7 @@ export default function Services() {
                     title="Student Tutoring"
                     description="Helping students achieve their academic goals by providing personalized tutoring services."
                     topicTitle="Topics I teach"
-                    topics={['Computer Science', 'UI/UX Design', 'Other (Request)']}
+                    topics={['Software Engineering', 'UI/UX Design', 'Other (Request)']}
                     href={"https://calendar.app.google/tWdyx95wB8hLPdHw8"}
                 />
             </motion.div>
