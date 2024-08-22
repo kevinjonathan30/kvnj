@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import { useInView } from 'react-intersection-observer';
 
@@ -26,6 +26,10 @@ export default function Header() {
         {
             icon: <FaLinkedin />,
             link: "https://www.linkedin.com/in/kevinjonathan3010",
+        },
+        {
+            icon: <FaTwitterSquare />,
+            link: "https://x.com/kevinjo30_",
         },
     ];
 
