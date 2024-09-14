@@ -6,11 +6,13 @@ import AppContext from '@/context/AppContext';
 import AnchorButton from '@/components/include/AnchorButton';
 import Footer from '@/components/Footer';
 import Navigation from '../Navigation';
+import localization from '@/public/localization/localization.json';
 
 export default function MainWrapper({ children }) {
   const context = useContext(AppContext);
   const router = useRouter();
   const [path, setPath] = useState(null);
+  const l = localization[context.language];
 
   useEffect(() => {
     const currentPath = router.asPath;
@@ -51,7 +53,7 @@ export default function MainWrapper({ children }) {
             transition={{ duration: 1 }}
           >
             <AnchorButton href={'./'} openInNewTab={false}>
-              Back to Home
+              {l.mainWrapperBackToHome}
             </AnchorButton>
           </motion.div>
         )}

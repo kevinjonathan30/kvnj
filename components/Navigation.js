@@ -3,10 +3,13 @@ import { motion, useAnimation } from 'framer-motion';
 import { CgDarkMode } from "react-icons/cg";
 import { RiMenu4Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
+import { MdLanguage } from "react-icons/md";
+import { GiJapan } from "react-icons/gi";
 import Button from './include/Button';
 import AppContext from '@/context/AppContext';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import { useInView } from 'react-intersection-observer';
+import localization from '@/public/localization/localization.json';
 
 const slideUpVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -19,6 +22,7 @@ export default function Navigation() {
     const controls = useAnimation(); // Animation controls for main navigation elements
     const menuControls = useAnimation(); // Animation controls for menu items
     const { ref, inView } = useInView({ threshold: 0.1 }); // Hook for detecting element visibility
+    const l = localization[context.language];
 
     useEffect(() => {
         if (inView) {
@@ -77,6 +81,18 @@ export default function Navigation() {
                             <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                         </Button>
                     </li>
+                    <li>
+                        <Button 
+                            onClick={() => context.setLanguage(context.language === 'en' ? 'ja' : 'en')} 
+                            useStyle={false}
+                        >
+                            {context.language === 'en' ? 
+                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                             : 
+                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                            }
+                        </Button>
+                    </li>
                 </ul>
             </motion.div>
 
@@ -102,7 +118,7 @@ export default function Navigation() {
                             variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/portfolio/"} openInNewTab={false}>Portfolio</AnimatedAnchor>
+                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/portfolio/"} openInNewTab={false}>{l.menuPortfolio}</AnimatedAnchor>
                         </motion.li>
                         <motion.li
                             className="mb-8"
@@ -111,7 +127,7 @@ export default function Navigation() {
                             variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/articles/"} openInNewTab={false}>Articles</AnimatedAnchor>
+                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href={"/articles/"} openInNewTab={false}>{l.menuArticles}</AnimatedAnchor>
                         </motion.li>
                     </ul>
                 </motion.div>

@@ -1,8 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import AppContext from '@/context/AppContext';
 import { motion, useAnimation } from 'framer-motion';
 import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import { useInView } from 'react-intersection-observer';
+import localization from '@/public/localization/localization.json';
 
 const slideUpVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -10,6 +12,9 @@ const slideUpVariants = {
 };
 
 export default function Header() {
+    const context = useContext(AppContext);
+    const l = localization[context.language];
+
     const socialMediaLinks = [
         {
             icon: <FaBehanceSquare />,
@@ -53,10 +58,10 @@ export default function Header() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide md:text-6xl">Kevin Jonathan</h2>
-                <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">Software Engineer</h3>
+                <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide md:text-6xl">{l.headerName}</h2>
+                <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">{l.headerTitle}</h3>
                 <p className="text-md md:text-xl font-normal py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-lg mx-auto">
-                    I am Kevin Jonathan, currently dedicated to my academic endeavors at Waseda University as both a student and a research assistant. I hold a degree from Petra Christian University and have successfully completed the Apple Developer Academy program. Additionally, I contribute as an external code reviewer for Dicoding Indonesia.
+                    {l.headerIntro}
                 </p>
             </motion.div>
             <motion.div

@@ -1,7 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import AnchorImage from './include/AnchorImage';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import AppContext from '@/context/AppContext';
+import localization from '@/public/localization/localization.json';
 
 const slideUpVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -14,6 +16,8 @@ export default function Portfolio() {
     const [allLoaded, setAllLoaded] = useState(false);
     const { ref, inView } = useInView({ threshold: 0.1 });
     const controls = useAnimation();
+    const context = useContext(AppContext);
+    const l = localization[context.language];
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -87,10 +91,10 @@ export default function Portfolio() {
         return (
             <section>
                 <div className="mt-20">
-                    <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Portfolio List</h3>
+                    <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
                 </div>
                 <div className="flex justify-center items-center h-64">
-                    <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">Loading...</p>
+                    <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">{l.loadingMessage}</p>
                 </div>
             </section>
         );
@@ -105,12 +109,12 @@ export default function Portfolio() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">Portfolio List</h3>
+                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
                 <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    Alongside being a software engineer, I also do UI/UX Design freelance for customers.
+                    {l.portfolioIntro1}
                 </p>
                 <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    Here is the list of projects that I have worked on related to software or UI/UX design.
+                    {l.portfolioIntro2}
                 </p>
             </motion.div>
             <motion.div
