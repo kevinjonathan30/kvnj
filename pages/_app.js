@@ -50,10 +50,10 @@ export default function App({ Component, pageProps }) {
           <NextNProgress color="rgb(96, 165, 250)" />
           <WinterEvent />
           <Component {...pageProps} />
-          <Analytics />
-          <SpeedInsights />
         </AppContext.Provider>
       </>
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }
