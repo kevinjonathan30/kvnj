@@ -71,14 +71,14 @@ export default function Navigation() {
                 <ul>
                     <li>
                         <Button onClick={menuOpen ? closeMenu : openMenu} useStyle={false}>
-                            {menuOpen ? <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" /> : <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />}
+                            {menuOpen ? <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" /> : <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />}
                         </Button>
                     </li>
                     <li>
                         <Button onClick={() => {
                             context.setDarkMode(!context.darkMode)
                         }} useStyle={false}>
-                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
                         </Button>
                     </li>
                     <li>
@@ -87,9 +87,9 @@ export default function Navigation() {
                             useStyle={false}
                         >
                             {context.language === 'en' ? 
-                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
                              : 
-                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
                             }
                         </Button>
                     </li>

@@ -6,7 +6,7 @@ export default function Button({ children, onClick, className, useStyle=true }) 
             <AnimatedAnchor className={className}>
                 <button
                     onClick={onClick}
-                    className="bg-blue-100 dark:bg-gray-900 text-gray-900 dark:text-blue-100 font-semibold px-4 py-2 border-2 border-gray-900 dark:border-blue-100"
+                    className="bg-blue-100 dark:bg-gray-900 text-gray-900 dark:text-blue-100 font-semibold px-4 py-2 border-2 border-gray-900 dark:border-blue-100 rounded-md"
                 >
                     {children}
                 </button>
@@ -17,7 +17,7 @@ export default function Button({ children, onClick, className, useStyle=true }) 
             <AnimatedAnchor className={className}>
                 <button
                     onClick={onClick}
-                    className="text-gray-900 dark:text-blue-100 font-semibold px-4 py-2"
+                    className="text-gray-900 dark:text-blue-100 font-semibold px-4 py-2 rounded-md"
                 >
                     {children}
                 </button>

@@ -26,7 +26,12 @@
         "serviceStudentTutoringTopics": ["Software Engineering", "UI/UX Design", "Other (Request)"],
         "articlesTitle": "Latest Articles",
         "articlesViewMore": "See More",
-        "mainWrapperBackToHome": "Back to Home"
+        "mainWrapperBackToHome": "Back to Home",
+        "errorHeadline": "Oops!",
+        "title404": "404 - Not Found",
+        "title500": "500 - Internal Server Error",
+        "subtitle404": "Perhaps the page you are looking for has risen into the unknown...?",
+        "subtitle500": "Perhaps the server needs time to recover itself...?"
     },
     "ja": {
         "menuPortfolio": "ポートフォリオ",
@@ -55,6 +60,11 @@
         "serviceStudentTutoringTopics": ["ソフトウェア工学", "UI/UXデザイン", "その他（リクエスト）"],
         "articlesTitle": "最新の記事",
         "articlesViewMore": "もっと見る",
-        "mainWrapperBackToHome": "ホームに戻る"
+        "mainWrapperBackToHome": "ホームに戻る",
+        "errorHeadline": "おっと!",
+        "title404": "404 - 見つかりません",
+        "title500": "500 - サーバー内部エラー",
+        "subtitle404": "探しているページは未知の領域に消えてしまったかもしれません…。",
+        "subtitle500": "サーバーが回復するための時間を必要としているのかもしれません…。"
     }
 }
