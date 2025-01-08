@@ -52,7 +52,7 @@ export default function Services() {
                     description={l.serviceUiUxDesignDescription}
                     topicTitle={l.serviceUiUxDesignTopicsTitle}
                     topics={l.serviceUiUxDesignTopics}
-                    href={"https://be.net/kevinjonathan3010"}
+                    href={"https://kevinjonathan.notion.site/175c704efc1b800eb09af93954bc257c?pvs=105"}
                 />
                 <ServiceCard
                     icon={<FaCode className="mx-auto" />}
@@ -60,7 +60,7 @@ export default function Services() {
                     description={l.serviceSoftwareDevelopmentDescription}
                     topicTitle={l.serviceSoftwareDevelopmentTopicsTitle}
                     topics={l.serviceSoftwareDevelopmentTopics}
-                    href={"https://github.com/KevinJonathan30"}
+                    href={"https://kevinjonathan.notion.site/175c704efc1b800eb09af93954bc257c?pvs=105"}
                 />
                 <ServiceCard
                     icon={<FaGraduationCap className="mx-auto" />}
@@ -68,7 +68,7 @@ export default function Services() {
                     description={l.serviceStudentTutoringDescription}
                     topicTitle={l.serviceStudentTutoringTopicsTitle}
                     topics={l.serviceStudentTutoringTopics}
-                    href={"https://calendar.app.google/tWdyx95wB8hLPdHw8"}
+                    href={"https://kevinjonathan.notion.site/175c704efc1b800eb09af93954bc257c?pvs=105"}
                 />
             </motion.div>
         </section>
