@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>KVNJ | Kevin Jonathan</title>
-        <meta name="description" content="Hi, I’m Kevin Jonathan. I study and conduct research at Waseda University. I also completed the Apple Developer Academy program and review code for Dicoding Indonesia." />
+        <meta name="description" content="Hello, my name is Kevin Jonathan. I am a graduate student at Waseda University with interests in mobile app development, and UI/UX design. I am currently conducting research in the field of information security. It is a pleasure to meet you." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, archive" />
         <link rel="icon" href="/favicon.ico" />
