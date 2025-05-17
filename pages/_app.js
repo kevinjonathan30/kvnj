@@ -7,10 +7,12 @@ import '@/styles/fonts.css';
 import AppContext from '@/context/AppContext';
 import WinterEvent from '@/components/include/WinterEvent';
 import NextNProgress from 'nextjs-progressbar';
+import Loader from '@/components/Loader';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en');
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const updateDarkMode = (e) => {
@@ -30,9 +32,12 @@ export default function App({ Component, pageProps }) {
 
     window.addEventListener('languagechange', updateLanguage);
 
+    const timer = setTimeout(() => setLoading(false), 1300);
+
     return () => {
       darkModeMediaQuery.removeEventListener('change', updateDarkMode);
       window.removeEventListener('languagechange', updateLanguage);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -45,15 +50,18 @@ export default function App({ Component, pageProps }) {
         <meta name="robots" content="index, archive" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <>
-        <AppContext.Provider value={{ darkMode, setDarkMode, language, setLanguage }}>
-          <NextNProgress color="rgb(96, 165, 250)" />
-          <WinterEvent />
-          <Component {...pageProps} />
-        </AppContext.Provider>
-      </>
-      <Analytics />
-      <SpeedInsights />
+      {loading && <Loader />}
+      {!loading && (
+        <>
+          <AppContext.Provider value={{ darkMode, setDarkMode, language, setLanguage }}>
+            <NextNProgress color="rgb(96, 165, 250)" />
+            <WinterEvent />
+            <Component {...pageProps} />
+          </AppContext.Provider>
+          <Analytics />
+          <SpeedInsights />
+        </>
+      )}
     </>
   );
 }
