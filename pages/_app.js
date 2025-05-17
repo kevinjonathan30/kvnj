@@ -7,7 +7,7 @@ import '@/styles/fonts.css';
 import AppContext from '@/context/AppContext';
 import WinterEvent from '@/components/include/WinterEvent';
 import NextNProgress from 'nextjs-progressbar';
-import Loader from '@/components/Loader';
+import Loader from '@/components/include/Loader';
 
 export default function App({ Component, pageProps }) {
   const [darkMode, setDarkMode] = useState(false);
