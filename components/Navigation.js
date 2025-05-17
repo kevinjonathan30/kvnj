@@ -71,14 +71,14 @@ export default function Navigation() {
                 <ul>
                     <li>
                         <Button onClick={menuOpen ? closeMenu : openMenu} useStyle={false}>
-                            {menuOpen ? <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" /> : <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />}
+                            {menuOpen ? <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" /> : <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />}
                         </Button>
                     </li>
                     <li>
                         <Button onClick={() => {
                             context.setDarkMode(!context.darkMode)
                         }} useStyle={false}>
-                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
+                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                         </Button>
                     </li>
                     <li>
@@ -87,18 +87,18 @@ export default function Navigation() {
                             useStyle={false}
                         >
                             {context.language === 'en' ? 
-                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
+                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                              : 
-                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl rounded-md" />
+                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
                             }
                         </Button>
                     </li>
                 </ul>
             </motion.div>
 
-            <div className="fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '1' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
+            <div className="fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out" style={{ opacity: menuOpen ? '0.95' : '0', pointerEvents: menuOpen ? 'auto' : 'none' }} onClick={closeMenu}>
                 <motion.div
-                    className={`fixed inset-y-0 right-0 z-50 w-full md:w-1/4 bg-blue-100 dark:bg-gray-900 text-white transform transition-colors duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
+                    className={`fixed inset-y-0 right-0 z-50 w-full bg-blue-100 dark:bg-gray-900 text-white transform transition-colors duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'
                         }`}
                     initial="hidden"
                     animate={menuControls}
