@@ -5,11 +5,23 @@ This is a simple portfolio website created using Next.js, React, and TailwindCSS
 A live demo of the website can be found [here](https://kevin-jonathan.vercel.app/).
 
 ## Features
-- Responsive design
-- Dark and light mode toggle
-- Portfolio section with links to Behance projects
-- Built with Next.js for server-side rendering and fast performance
-- Styled with TailwindCSS
+
+- Responsive design optimized for desktop and mobile devices  
+- Dark and light mode support with smooth transitions  
+- Integration with Behance to dynamically display UI/UX projects  
+- Animated components powered by `framer-motion` for enhanced user experience  
+- Intersection observer for lazy loading and visibility tracking  
+- Localization support for English and Japanese  
+- Developed using Next.js and React with TailwindCSS for styling
+
+## Technologies Used
+
+- [Next.js](https://nextjs.org/) — React framework for server-side rendering and static site generation  
+- [React](https://reactjs.org/) — JavaScript library for building user interfaces  
+- [TailwindCSS](https://tailwindcss.com/) — Utility-first CSS framework for rapid UI development  
+- [Framer Motion](https://www.framer.com/motion/) — Animation library for React  
+- [React Intersection Observer](https://github.com/thebuilder/react-intersection-observer) — React hook to track element visibility  
+- [Vercel](https://vercel.com/) — Deployment platform
 
 ## Installation and Usage
 To run this project locally, follow these steps:

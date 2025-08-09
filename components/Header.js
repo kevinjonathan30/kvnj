@@ -1,3 +1,4 @@
+// Header: Animated header with name, title, intro, and social media links
 import { useEffect, useContext } from 'react';
 import AppContext from '@/context/AppContext';
 import { motion, useAnimation } from 'framer-motion';
@@ -16,37 +17,18 @@ export default function Header() {
     const l = localization[context.language];
 
     const socialMediaLinks = [
-        {
-            icon: <FaBehanceSquare />,
-            link: "https://be.net/kevinjonathan3010",
-        },
-        {
-            icon: <FaGithubSquare />,
-            link: "https://github.com/KevinJonathan30",
-        },
-        {
-            icon: <FaEnvelopeSquare />,
-            link: "mailto:kevinjonathan@ymail.ne.jp",
-        },
-        {
-            icon: <FaLinkedin />,
-            link: "https://www.linkedin.com/in/kevinjonathan3010",
-        },
-        {
-            icon: <FaTwitterSquare />,
-            link: "https://x.com/kevinjo30_",
-        },
+        { icon: <FaBehanceSquare />, link: 'https://be.net/kevinjonathan3010' },
+        { icon: <FaGithubSquare />, link: 'https://github.com/KevinJonathan30' },
+        { icon: <FaEnvelopeSquare />, link: 'mailto:kevinjonathan@ymail.ne.jp' },
+        { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/kevinjonathan3010' },
+        { icon: <FaTwitterSquare />, link: 'https://x.com/kevinjo30_' },
     ];
 
     const controls = useAnimation();
     const { ref, inView } = useInView({ threshold: 0.1 });
 
     useEffect(() => {
-        if (inView) {
-            controls.start('visible');
-        } else {
-            controls.start('hidden');
-        }
+        controls.start(inView ? 'visible' : 'hidden');
     }, [controls, inView]);
 
     return (

@@ -1,3 +1,4 @@
+// API route: Fetches and parses Medium RSS feed
 import Parser from 'rss-parser';
 
 const parser = new Parser();

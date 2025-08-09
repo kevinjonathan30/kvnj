@@ -1,3 +1,4 @@
+// Services: Displays service cards with animation
 import { useEffect, useContext } from 'react';
 import AppContext from '@/context/AppContext';
 import localization from '@/public/localization/localization.json';
@@ -18,11 +19,7 @@ export default function Services() {
     const l = localization[context.language];
 
     useEffect(() => {
-        if (inView) {
-            controls.start('visible');
-        } else {
-            controls.start('hidden');
-        }
+        controls.start(inView ? 'visible' : 'hidden');
     }, [controls, inView]);
 
     return (
@@ -52,7 +49,7 @@ export default function Services() {
                     description={l.serviceUiUxDesignDescription}
                     topicTitle={l.serviceUiUxDesignTopicsTitle}
                     topics={l.serviceUiUxDesignTopics}
-                    href={"https://www.behance.net/kevinjonathan3010/services/501293/UX-Design-UX"}
+                    href="https://www.behance.net/kevinjonathan3010/services/501293/UX-Design-UX"
                 />
                 <ServiceCard
                     icon={<FaCode className="mx-auto" />}
@@ -60,7 +57,7 @@ export default function Services() {
                     description={l.serviceSoftwareDevelopmentDescription}
                     topicTitle={l.serviceSoftwareDevelopmentTopicsTitle}
                     topics={l.serviceSoftwareDevelopmentTopics}
-                    href={"https://github.com/kevinjonathan30"}
+                    href="https://github.com/kevinjonathan30"
                 />
                 <ServiceCard
                     icon={<FaGraduationCap className="mx-auto" />}
@@ -68,7 +65,7 @@ export default function Services() {
                     description={l.serviceStudentTutoringDescription}
                     topicTitle={l.serviceStudentTutoringTopicsTitle}
                     topics={l.serviceStudentTutoringTopics}
-                    href={"https://www.teacheron.com/tutor/aRJv?r=aRJv"}
+                    href="https://www.teacheron.com/tutor/aRJv?r=aRJv"
                 />
             </motion.div>
         </section>

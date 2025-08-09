@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
+// AnimatedAnchor: A wrapper for animated anchor links
 export default function AnimatedAnchor({ children, href, openInNewTab = true, className }) {
     const anchorProps = {
         href: href || undefined,
-        target: openInNewTab ? "_blank" : undefined,
-        rel: "noopener",
-        className: className,
+        target: openInNewTab ? '_blank' : undefined,
+        rel: openInNewTab ? 'noopener' : undefined,
+        className,
     };
 
     return (

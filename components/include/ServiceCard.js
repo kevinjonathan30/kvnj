@@ -1,8 +1,9 @@
+// ServiceCard: Displays a service with icon, title, description, and topics
 import AnimatedAnchor from './AnimatedAnchor';
 
 export default function ServiceCard({ icon, title, description, topicTitle, topics, href }) {
     return (
-        <div className='lg:basis-0 lg:flex-grow w-full'>
+        <div className="lg:basis-0 lg:flex-grow w-full">
             <AnimatedAnchor href={href}>
                 <div className="text-center border-2 border-gray-900 dark:border-blue-100 p-10 my-10 bg-blue-50 dark:bg-gray-900">
                     <div className="text-6xl md:text-8xl w-full text-gray-900 dark:text-blue-100">
@@ -24,4 +25,4 @@ export default function ServiceCard({ icon, title, description, topicTitle, topi
             </AnimatedAnchor>
         </div>
     );
-};
+}

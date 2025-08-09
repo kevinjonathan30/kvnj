@@ -1,37 +1,37 @@
 import { useState, useEffect } from 'react';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import Head from 'next/head';
-import '@/styles/globals.css';
-import '@/styles/fonts.css';
 import AppContext from '@/context/AppContext';
 import WinterEvent from '@/components/include/WinterEvent';
 import NextNProgress from 'nextjs-progressbar';
 import Loader from '@/components/include/Loader';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import '@/styles/globals.css';
+import '@/styles/fonts.css';
 
 export default function App({ Component, pageProps }) {
+  // State for dark mode, language, and loader
   const [darkMode, setDarkMode] = useState(false);
   const [language, setLanguage] = useState('en');
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Handle dark mode and language detection
     const updateDarkMode = (e) => {
       setDarkMode(e.matches);
     };
-
     const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setDarkMode(darkModeMediaQuery.matches); // Set initial dark mode
+    setDarkMode(darkModeMediaQuery.matches);
     darkModeMediaQuery.addEventListener('change', updateDarkMode);
 
     const updateLanguage = () => {
       const browserLanguage = navigator.language || navigator.userLanguage;
       setLanguage(browserLanguage.startsWith('ja') ? 'ja' : 'en');
     };
-
     updateLanguage();
-
     window.addEventListener('languagechange', updateLanguage);
 
+    // Loader logic: show loader for 1.3s on first load
     const timer = setTimeout(() => setLoading(false), 1300);
 
     return () => {

@@ -1,3 +1,4 @@
+// Portfolio: Fetches and displays Behance portfolio items with loading and animation
 import { useEffect, useState, useContext } from 'react';
 import AnchorImage from './include/AnchorImage';
 import { motion, useAnimation } from 'framer-motion';
@@ -25,66 +26,51 @@ export default function Portfolio() {
 
         async function fetchData() {
             try {
-                const response = await fetch("/api/behance/rss", { signal });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+                const response = await fetch('/api/behance/rss', { signal });
+                if (!response.ok) throw new Error('Network response was not ok');
                 const rssItems = await response.json();
                 const imgRegex = /<img[^>]+src=['"]([^'"]+)['"]/;
-
-                let processedItems = [];
-                for (const item of rssItems) {
-                    const match = imgRegex.exec(item.content);
-                    if (match) {
-                        let imageUrl = match[1].replace('/404/', '/original/');
-                        let processedItem = {
-                            href: item.link,
-                            src: imageUrl,
-                            alt: item.title
-                        };
-                        processedItems.push(processedItem);
-                    }
-                }
-
+                const processedItems = rssItems
+                    .map(item => {
+                        const match = imgRegex.exec(item.content);
+                        if (match) {
+                            return {
+                                href: item.link,
+                                src: match[1].replace('/404/', '/original/'),
+                                alt: item.title,
+                            };
+                        }
+                        return null;
+                    })
+                    .filter(Boolean);
                 setItems(processedItems);
             } catch (error) {
                 console.error('Failed to fetch data:', error);
             } finally {
-                setLoading(false); // Set loading to false regardless of success or failure
+                setLoading(false);
             }
         }
 
         fetchData();
-        return () => {
-            abortController.abort();
-        };
+        return () => abortController.abort();
     }, []);
 
     useEffect(() => {
         const imagePromises = items.map(item => {
             return new Promise((resolve, reject) => {
-                const img = new Image();
+                const img = new window.Image();
                 img.onload = () => resolve();
                 img.onerror = () => reject();
                 img.src = item.src;
             });
         });
-
         Promise.all(imagePromises)
-            .then(() => {
-                setAllLoaded(true);
-            })
-            .catch(() => {
-                setAllLoaded(false);
-            });
+            .then(() => setAllLoaded(true))
+            .catch(() => setAllLoaded(false));
     }, [items]);
 
     useEffect(() => {
-        if (allLoaded && inView) {
-            controls.start('visible');
-        } else {
-            controls.start('hidden');
-        }
+        controls.start(allLoaded && inView ? 'visible' : 'hidden');
     }, [controls, allLoaded, inView]);
 
     if (loading) {
@@ -129,9 +115,7 @@ export default function Portfolio() {
                         <AnchorImage href={item.href} src={item.src} alt={item.alt} />
                     </div>
                 ))}
-                {items.length % 2 !== 0 && (
-                    <div className="basis-1/3 flex-1"></div>
-                )}
+                {items.length % 2 !== 0 && <div className="basis-1/3 flex-1"></div>}
             </motion.div>
         </section>
     );

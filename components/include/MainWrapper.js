@@ -1,6 +1,7 @@
+// MainWrapper: Layout wrapper with navigation, footer, and animated back-to-home button
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { motion, useAnimation } from 'framer-motion'; // Import motion components
+import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import AppContext from '@/context/AppContext';
 import AnchorButton from '@/components/include/AnchorButton';
@@ -15,24 +16,19 @@ export default function MainWrapper({ children }) {
   const l = localization[context.language];
 
   useEffect(() => {
-    const currentPath = router.asPath;
-    setPath(currentPath);
+    setPath(router.asPath);
   }, [router.asPath]);
 
   const isHome = path === '/';
   const hasQuery = Object.keys(router.query).length === 0;
   const showButton = !isHome && hasQuery;
 
-  // Animation controls
+  // Animation controls for back-to-home button
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
   useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
+    controls.start(inView ? 'visible' : 'hidden');
   }, [controls, inView]);
 
   return (
@@ -52,7 +48,7 @@ export default function MainWrapper({ children }) {
             }}
             transition={{ duration: 1 }}
           >
-            <AnchorButton href={'./'} openInNewTab={false}>
+            <AnchorButton href="./" openInNewTab={false}>
               {l.mainWrapperBackToHome}
             </AnchorButton>
           </motion.div>

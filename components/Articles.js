@@ -1,3 +1,4 @@
+// Articles: Fetches and displays Medium articles with loading state
 import { useContext, useEffect, useState } from 'react';
 import AppContext from '@/context/AppContext';
 import localization from '@/public/localization/localization.json';
@@ -16,24 +17,19 @@ export default function Articles() {
 
         async function fetchData() {
             try {
-                const response = await fetch("/api/medium/rss", { signal });
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+                const response = await fetch('/api/medium/rss', { signal });
+                if (!response.ok) throw new Error('Network response was not ok');
                 const data = await response.json();
-                const items = data.slice(0, 10); // Adjust the number of items as needed
-                setItems(items);
+                setItems(data.slice(0, 10));
             } catch (error) {
                 console.error('Failed to fetch data:', error);
             } finally {
-                setLoading(false); // Set loading to false regardless of success or failure
+                setLoading(false);
             }
         }
 
         fetchData();
-        return () => {
-            abortController.abort();
-        };
+        return () => abortController.abort();
     }, []);
 
     return (
@@ -61,7 +57,7 @@ export default function Articles() {
                     </ul>
                 )}
                 <div className="flex justify-center">
-                    <AnchorButton href={"https://kevin-jonathan.medium.com/"}>{l.articlesViewMore}</AnchorButton>
+                    <AnchorButton href="https://kevin-jonathan.medium.com/">{l.articlesViewMore}</AnchorButton>
                 </div>
             </div>
         </section>
