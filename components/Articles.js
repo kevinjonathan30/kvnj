@@ -5,6 +5,7 @@ import localization from '@/public/localization/localization.json';
 import AnimatedAnchor from './include/AnimatedAnchor';
 import AnchorButton from './include/AnchorButton';
 
+
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -15,12 +16,33 @@ export default function Articles() {
         const abortController = new AbortController();
         const signal = abortController.signal;
 
-        async function fetchData() {
+        async function fetchAllArticles() {
             try {
-                const response = await fetch('/api/medium/rss', { signal });
-                if (!response.ok) throw new Error('Network response was not ok');
-                const data = await response.json();
-                setItems(data.slice(0, 10));
+                // Fetch Medium articles
+                const mediumRes = await fetch('/api/medium/rss', { signal });
+                if (!mediumRes.ok) throw new Error('Network response was not ok');
+                const mediumData = await mediumRes.json();
+                const mediumArticles = mediumData.map(item => ({
+                    source: 'medium',
+                    title: item.title,
+                    link: item.link,
+                    pubDate: item.pubDate,
+                }));
+
+                // Fetch Note.com articles
+                const noteRes = await fetch('/api/note/rss', { signal });
+                if (!noteRes.ok) throw new Error('Network response was not ok');
+                const noteJson = await noteRes.json();
+                const noteArticles = (noteJson.data.contents || []).map(item => ({
+                    source: 'note',
+                    title: item.name,
+                    link: item.noteUrl || `https://note.com/kevinjonathan/n/${item.key}`,
+                    pubDate: item.publishAt,
+                }));
+
+                // Merge and sort all articles by date (descending)
+                const allArticles = [...mediumArticles, ...noteArticles].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                setItems(allArticles);
             } catch (error) {
                 console.error('Failed to fetch data:', error);
             } finally {
@@ -28,7 +50,7 @@ export default function Articles() {
             }
         }
 
-        fetchData();
+        fetchAllArticles();
         return () => abortController.abort();
     }, []);
 
@@ -49,15 +71,20 @@ export default function Articles() {
                                 <p className="text-sm md:text-base font-medium pt-2 dark:text-white">{formatDate(item.pubDate)}</p>
                                 <div className="flex justify-center">
                                     <AnimatedAnchor href={item.link}>
-                                        <h3 className="text-lg md:text-xl font-medium pb-2 text-blue-700 dark:text-blue-400">{item.title}</h3>
+                                        <h3 className="text-lg md:text-xl font-medium pb-2 text-blue-700 dark:text-blue-400">
+                                            {item.title}
+                                        </h3>
                                     </AnimatedAnchor>
                                 </div>
                             </li>
                         ))}
                     </ul>
                 )}
-                <div className="flex justify-center">
-                    <AnchorButton href="https://kevin-jonathan.medium.com/">{l.articlesViewMore}</AnchorButton>
+                <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 w-full md:w-auto mt-4">
+                    <div className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+                        <AnchorButton href="https://kevin-jonathan.medium.com/">{l.articlesViewMore} (Medium)</AnchorButton>
+                        <AnchorButton href="https://note.com/kevinjonathan">{l.articlesViewMore} (Note)</AnchorButton>
+                    </div>
                 </div>
             </div>
         </section>
