@@ -65,7 +65,7 @@ export default function Services() {
                     description={l.serviceStudentTutoringDescription}
                     topicTitle={l.serviceStudentTutoringTopicsTitle}
                     topics={l.serviceStudentTutoringTopics}
-                    href="https://www.teacheron.com/tutor/aRJv?r=aRJv"
+                    href="https://calendar.app.google/Vg9egaVjzCngS1Fb7"
                 />
             </motion.div>
         </section>
