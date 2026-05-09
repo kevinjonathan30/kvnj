@@ -4,7 +4,7 @@ import Parser from 'rss-parser';
 const parser = new Parser();
 
 export default async function handler(req, res) {
-  const rssUrl = 'https://kevin-jonathan.medium.com/feed';
+  const rssUrl = 'https://kevin-writes.medium.com/feed';
   try {
     const response = await fetch(rssUrl);
     const xml = await response.text();

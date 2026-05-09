@@ -22,26 +22,12 @@ export default function Articles() {
                 const mediumRes = await fetch('/api/medium/rss', { signal });
                 if (!mediumRes.ok) throw new Error('Network response was not ok');
                 const mediumData = await mediumRes.json();
-                const mediumArticles = mediumData.map(item => ({
+                const allArticles = mediumData.map(item => ({
                     source: 'medium',
                     title: item.title,
                     link: item.link,
                     pubDate: item.pubDate,
-                }));
-
-                // Fetch Note.com articles
-                const noteRes = await fetch('/api/note/rss', { signal });
-                if (!noteRes.ok) throw new Error('Network response was not ok');
-                const noteJson = await noteRes.json();
-                const noteArticles = (noteJson.data.contents || []).map(item => ({
-                    source: 'note',
-                    title: item.name,
-                    link: item.noteUrl || `https://note.com/kevinjonathan/n/${item.key}`,
-                    pubDate: item.publishAt,
-                }));
-
-                // Merge and sort all articles by date (descending)
-                const allArticles = [...mediumArticles, ...noteArticles].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                })).sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
                 setItems(allArticles);
             } catch (error) {
                 console.error('Failed to fetch data:', error);
@@ -81,10 +67,7 @@ export default function Articles() {
                     </ul>
                 )}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 w-full md:w-auto mt-4">
-                    <div className="w-full md:w-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
-                        <AnchorButton href="https://kevin-jonathan.medium.com/">{l.articlesViewMore} (Medium)</AnchorButton>
-                        <AnchorButton href="https://note.com/kevinjonathan">{l.articlesViewMore} (Note)</AnchorButton>
-                    </div>
+                    <AnchorButton href="https://kevin-writes.medium.com/">{l.articlesViewMore}</AnchorButton>
                 </div>
             </div>
         </section>
