@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 html {
-  font-family: var(--font-zen-kaku-gothic-new);
+  font-family: var(--font-zen-kaku-gothic-new), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 * {
