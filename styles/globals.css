@@ -1,44 +1,5 @@
 /* Global styles for the app */
-
-/* Zen Kaku Gothic New - Self-hosted fonts */
-@font-face {
-  font-family: 'Zen Kaku Gothic New';
-  src: url('/fonts/ZenKakuGothicNew-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zen Kaku Gothic New';
-  src: url('/fonts/ZenKakuGothicNew-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zen Kaku Gothic New';
-  src: url('/fonts/ZenKakuGothicNew-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zen Kaku Gothic New';
-  src: url('/fonts/ZenKakuGothicNew-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zen Kaku Gothic New';
-  src: url('/fonts/ZenKakuGothicNew-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-display: swap;
-}
-
-:root {
-  --font-zen-kaku-gothic-new: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
+@import './fonts.css';
 
 @tailwind base;
 @tailwind components;
