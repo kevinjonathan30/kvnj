@@ -49,7 +49,7 @@ export default function Services() {
                     description={l.serviceUiUxDesignDescription}
                     topicTitle={l.serviceUiUxDesignTopicsTitle}
                     topics={l.serviceUiUxDesignTopics}
-                    href="https://www.behance.net/kevinjonathan3010/services/501293/UX-Design-UX"
+                    href="https://www.behance.net/kevinjonathan3010"
                 />
                 <ServiceCard
                     icon={<FaCode className="mx-auto" />}
