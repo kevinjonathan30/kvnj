@@ -7,12 +7,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        burtons: "burtons",
-        gloriaHallelujah: "gloriahallelujah"
-      }
-    },
+    fontFamily: {
+      sans: ["var(--font-zen-kaku-gothic-new)"],
+    }
   },
   plugins: [],
 }

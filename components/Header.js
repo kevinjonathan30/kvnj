@@ -40,8 +40,8 @@ export default function Header() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h2 className="font-gloriaHallelujah text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide md:text-6xl">{l.headerName}</h2>
-                <h3 className="font-gloriaHallelujah text-2xl py-2 dark:text-white md:text-3xl">{l.headerTitle}</h3>
+                <h2 className="text-5xl py-2 text-blue-700 dark:text-blue-400 font-semibold tracking-wide md:text-6xl">{l.headerName}</h2>
+                <h3 className="text-2xl py-2 dark:text-white md:text-3xl">{l.headerTitle}</h3>
                 <p className="text-md md:text-xl font-normal py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-lg mx-auto">
                     {l.headerIntro}
                 </p>

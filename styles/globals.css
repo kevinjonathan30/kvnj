@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  font-family: var(--font-zen-kaku-gothic-new);
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

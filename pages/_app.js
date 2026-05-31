@@ -1,3 +1,4 @@
+import { zenKakuGothicNew } from '@/lib/fonts'
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import AppContext from '@/context/AppContext';
@@ -7,7 +8,6 @@ import Loader from '@/components/include/Loader';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/styles/globals.css';
-import '@/styles/fonts.css';
 
 export default function App({ Component, pageProps }) {
   // State for dark mode, language, and loader
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <>
+    <div className={zenKakuGothicNew.variable}>
       <Head>
         <title>KVNJ | Kevin Jonathan</title>
         <meta name="description" content="Hello, my name is Kevin Jonathan. I am a graduate student at Waseda University with interests in mobile app development, and UI/UX design. I am currently conducting research in the field of information security. It is a pleasure to meet you." />
@@ -62,6 +62,6 @@ export default function App({ Component, pageProps }) {
           <SpeedInsights />
         </>
       )}
-    </>
+    </div>
   );
 }
