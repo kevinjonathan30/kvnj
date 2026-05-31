@@ -22,7 +22,7 @@ export default function Services() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">{l.servicesTitle}</h3>
+                <h3 className="text-3xl py-1 dark:text-white">{l.servicesTitle}</h3>
                 <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
                     {l.servicesDescription}
                 </p>
@@ -35,7 +35,7 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: 0.2 }}
             >
                 <ServiceCard
-                    icon={<FaPalette className="mx-auto" />}
+                    icon={<FaPalette className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
                     title={l.serviceUiUxDesignTitle}
                     description={l.serviceUiUxDesignDescription}
                     topicTitle={l.serviceUiUxDesignTopicsTitle}
@@ -43,7 +43,7 @@ export default function Services() {
                     href="https://www.behance.net/kevinjonathan3010"
                 />
                 <ServiceCard
-                    icon={<FaCode className="mx-auto" />}
+                    icon={<FaCode className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
                     title={l.serviceSoftwareDevelopmentTitle}
                     description={l.serviceSoftwareDevelopmentDescription}
                     topicTitle={l.serviceSoftwareDevelopmentTopicsTitle}
@@ -51,7 +51,7 @@ export default function Services() {
                     href="https://github.com/kevinjonathan30"
                 />
                 <ServiceCard
-                    icon={<FaGraduationCap className="mx-auto" />}
+                    icon={<FaGraduationCap className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
                     title={l.serviceStudentTutoringTitle}
                     description={l.serviceStudentTutoringDescription}
                     topicTitle={l.serviceStudentTutoringTopicsTitle}

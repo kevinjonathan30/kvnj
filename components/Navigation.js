@@ -40,7 +40,7 @@ export default function Navigation() {
             >
                 <nav className="py-10 mb-12 flex justify-between dark:text-white">
                     <AnimatedAnchor href="./" openInNewTab={false}>
-                        <h1 className="text-xl font-burtons font-bold">KVNJ</h1>
+                        <h1 className="text-xl font-bold">KVNJ</h1>
                     </AnimatedAnchor>
                 </nav>
             </motion.div>
@@ -57,15 +57,15 @@ export default function Navigation() {
                     <li>
                         <Button onClick={menuOpen ? closeMenu : openMenu} useStyle={false}>
                             {menuOpen ? (
-                                <IoClose className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <IoClose className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                             ) : (
-                                <RiMenu4Fill className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <RiMenu4Fill className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                             )}
                         </Button>
                     </li>
                     <li>
                         <Button onClick={() => context.setDarkMode(!context.darkMode)} useStyle={false}>
-                            <CgDarkMode className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                            <CgDarkMode className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                         </Button>
                     </li>
                     <li>
@@ -74,9 +74,9 @@ export default function Navigation() {
                             useStyle={false}
                         >
                             {context.language === 'en' ? (
-                                <MdLanguage className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <MdLanguage className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                             ) : (
-                                <GiJapan className="p-2 cursor-pointer bg-blue-700 dark:bg-blue-400 text-blue-50 dark:text-gray-900 text-5xl" />
+                                <GiJapan className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                             )}
                         </Button>
                     </li>
@@ -89,7 +89,7 @@ export default function Navigation() {
                 onClick={closeMenu}
             >
                 <motion.div
-                    className={`fixed inset-y-0 right-0 z-50 w-full bg-blue-50 dark:bg-gray-900 text-white transform transition-colors duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    className={`fixed inset-y-0 right-0 z-50 w-full bg-white dark:bg-black text-white transform transition-colors duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
                     initial="hidden"
                     animate={menuControls}
                     variants={slideUpVariants}
@@ -98,7 +98,7 @@ export default function Navigation() {
                     <ul className="text-center mt-12">
                         <li className="mb-12">
                             <AnimatedAnchor href="./" openInNewTab={false}>
-                                <h1 className="text-4xl font-burtons font-bold text-gray-900 dark:text-blue-50">KVNJ</h1>
+                                <h1 className="text-4xl font-bold text-gray-900 dark:text-blue-50">KVNJ</h1>
                             </AnimatedAnchor>
                         </li>
                         <motion.li
@@ -108,7 +108,7 @@ export default function Navigation() {
                             variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href="/portfolio/" openInNewTab={false}>
+                            <AnimatedAnchor className="text-2xl text-gray-900 dark:text-blue-100" href="/portfolio/" openInNewTab={false}>
                                 {l.menuPortfolio}
                             </AnimatedAnchor>
                         </motion.li>
@@ -119,7 +119,7 @@ export default function Navigation() {
                             variants={slideUpVariants}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                            <AnimatedAnchor className="font-gloriaHallelujah text-2xl text-gray-900 dark:text-blue-100" href="/articles/" openInNewTab={false}>
+                            <AnimatedAnchor className="text-2xl text-gray-900 dark:text-blue-100" href="/articles/" openInNewTab={false}>
                                 {l.menuArticles}
                             </AnimatedAnchor>
                         </motion.li>

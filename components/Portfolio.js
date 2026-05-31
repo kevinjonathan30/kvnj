@@ -70,7 +70,7 @@ export default function Portfolio() {
         return (
             <section>
                 <div className="mt-20">
-                    <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
+                    <h3 className="text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
                 </div>
                 <div className="flex justify-center items-center h-64">
                     <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">{l.loadingMessage}</p>
@@ -88,7 +88,7 @@ export default function Portfolio() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
+                <h3 className="text-3xl py-1 dark:text-white">{l.portfolioTitle}</h3>
                 <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
                     {l.portfolioIntro1}
                 </p>

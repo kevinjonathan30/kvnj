@@ -4,11 +4,11 @@ import AnimatedAnchor from './AnimatedAnchor';
 // AnchorImage: An animated anchor wrapping a responsive image
 export default function AnchorImage({ href, src, alt }) {
     return (
-        <AnimatedAnchor href={href}>
+        <AnimatedAnchor href={href} hoverEffect={false}>
             <Image
                 src={src}
                 alt={alt}
-                className="object-cover border-2 border-gray-900 dark:border-blue-100"
+                className="object-cover border-2 rounded-lg hover:border-blue-400 transition-colors duration-300"
                 width={0}
                 height={0}
                 sizes="100vw"

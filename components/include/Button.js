@@ -21,8 +21,8 @@ export default function Button({
   useStyle = true,
 }) {
   const styledClass = useStyle
-    ? 'bg-blue-50 dark:bg-gray-900 text-gray-900 dark:text-blue-100 font-semibold px-4 py-2 border-2 border-gray-900 dark:border-blue-100'
-    : 'text-gray-900 dark:text-blue-100 font-semibold px-4 py-2 rounded-md';
+    ? 'bg-blue-500 dark:bg-blue-400 text-white dark:text-black font-semibold px-4 py-2 rounded-3xl'
+    : 'text-black dark:text-white font-semibold px-4 py-2';
 
   // Render as link if href is provided
   if (href) {

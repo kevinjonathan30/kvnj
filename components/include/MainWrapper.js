@@ -26,7 +26,7 @@ export default function MainWrapper({ children }) {
 
   return (
     <div className={context.darkMode ? 'dark' : ''}>
-      <main className="px-10 bg-blue-50 dark:bg-gray-900 min-h-screen md:px-20 lg:px-40">
+      <main className="px-10 bg-white dark:bg-black min-h-screen md:px-20 lg:px-40">
         <Navigation />
         {children}
         {showButton && (

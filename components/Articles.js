@@ -41,7 +41,7 @@ export default function Articles() {
     return (
         <section>
             <div className="mt-12 pb-10">
-                <h3 className="font-gloriaHallelujah text-3xl py-1 dark:text-white text-center">{l.articlesTitle}</h3>
+                <h3 className="text-3xl py-1 dark:text-white text-center">{l.articlesTitle}</h3>
                 {loading ? (
                     <div className="flex items-center justify-center mb-8">
                         <div className="mr-4">
