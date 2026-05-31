@@ -1,11 +1,10 @@
 // Navigation: Animated navigation bar with menu, dark mode, and language toggle
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import { CgDarkMode } from 'react-icons/cg';
+import { FaSun, FaMoon } from "react-icons/fa";
 import { RiMenu4Fill } from 'react-icons/ri';
 import { IoClose } from 'react-icons/io5';
-import { MdLanguage } from 'react-icons/md';
-import { GiJapan } from 'react-icons/gi';
+import { TbLanguageHiragana } from "react-icons/tb";
 import Button from './include/Button';
 import AppContext from '@/context/AppContext';
 import AnimatedAnchor from './include/AnimatedAnchor';
@@ -65,19 +64,19 @@ export default function Navigation() {
                     </li>
                     <li>
                         <Button onClick={() => context.setDarkMode(!context.darkMode)} useStyle={false}>
-                            <CgDarkMode className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
+                            {context.darkMode ? (
+                                <FaSun className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
+                            ) : (
+                                <FaMoon className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
+                            )}
                         </Button>
                     </li>
                     <li>
                         <Button
                             onClick={() => context.setLanguage(context.language === 'en' ? 'ja' : 'en')}
                             useStyle={false}
-                        >
-                            {context.language === 'en' ? (
-                                <MdLanguage className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
-                            ) : (
-                                <GiJapan className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
-                            )}
+                        >    
+                            <TbLanguageHiragana className="p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />
                         </Button>
                     </li>
                 </ul>
