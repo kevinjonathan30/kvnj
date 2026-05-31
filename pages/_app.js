@@ -1,4 +1,3 @@
-import { zenKakuGothicNew } from '@/lib/fonts'
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import AppContext from '@/context/AppContext';
@@ -42,7 +41,7 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <div className={zenKakuGothicNew.variable}>
+    <div>
       <Head>
         <title>KVNJ | Kevin Jonathan</title>
         <meta name="description" content="Hello, my name is Kevin Jonathan. I am a graduate student at Waseda University with interests in mobile app development, and UI/UX design. I am currently conducting research in the field of information security. It is a pleasure to meet you." />
