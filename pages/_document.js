@@ -1,9 +1,8 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { zenKakuGothicNew } from '@/lib/fonts'
 
 export default function Document() {
   return (
-    <Html lang="en" className={zenKakuGothicNew.variable}>
+    <Html lang="en">
       <Head />
       <body>
         <Main />
