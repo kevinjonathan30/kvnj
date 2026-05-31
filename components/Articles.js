@@ -1,16 +1,14 @@
 // Articles: Fetches and displays Medium articles with loading state
-import { useContext, useEffect, useState } from 'react';
-import AppContext from '@/context/AppContext';
-import localization from '@/public/localization/localization.json';
+import { useEffect, useState } from 'react';
 import AnimatedAnchor from './include/AnimatedAnchor';
-import AnchorButton from './include/AnchorButton';
+import Button from './include/Button';
+import { useLocalization } from '@/hooks/useLocalization';
 
 
 export default function Articles() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-    const context = useContext(AppContext);
-    const l = localization[context.language];
+    const l = useLocalization();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -67,7 +65,7 @@ export default function Articles() {
                     </ul>
                 )}
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 w-full md:w-auto mt-4">
-                    <AnchorButton href="https://kevin-writes.medium.com/">{l.articlesViewMore}</AnchorButton>
+                    <Button href="https://kevin-writes.medium.com/">{l.articlesViewMore}</Button>
                 </div>
             </div>
         </section>

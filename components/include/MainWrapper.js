@@ -1,19 +1,20 @@
 // MainWrapper: Layout wrapper with navigation, footer, and animated back-to-home button
 import { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import AppContext from '@/context/AppContext';
-import AnchorButton from '@/components/include/AnchorButton';
+import Button from '@/components/include/Button';
 import Footer from '@/components/Footer';
 import Navigation from '../Navigation';
-import localization from '@/public/localization/localization.json';
+import { useLocalization } from '@/hooks/useLocalization';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function MainWrapper({ children }) {
   const context = useContext(AppContext);
   const router = useRouter();
   const [path, setPath] = useState(null);
-  const l = localization[context.language];
+  const l = useLocalization();
+  const { ref, controls } = useScrollAnimation();
 
   useEffect(() => {
     setPath(router.asPath);
@@ -22,14 +23,6 @@ export default function MainWrapper({ children }) {
   const isHome = path === '/';
   const hasQuery = Object.keys(router.query).length === 0;
   const showButton = !isHome && hasQuery;
-
-  // Animation controls for back-to-home button
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    controls.start(inView ? 'visible' : 'hidden');
-  }, [controls, inView]);
 
   return (
     <div className={context.darkMode ? 'dark' : ''}>
@@ -48,9 +41,9 @@ export default function MainWrapper({ children }) {
             }}
             transition={{ duration: 1 }}
           >
-            <AnchorButton href="./" openInNewTab={false}>
+            <Button href="./" openInNewTab={false}>
               {l.mainWrapperBackToHome}
-            </AnchorButton>
+            </Button>
           </motion.div>
         )}
         <Footer />

@@ -1,20 +1,17 @@
 // Header: Animated header with name, title, intro, and social media links
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import AppContext from '@/context/AppContext';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FaBehanceSquare, FaEnvelopeSquare, FaGithubSquare, FaLinkedin, FaTwitterSquare } from 'react-icons/fa';
 import AnimatedAnchor from './include/AnimatedAnchor';
-import { useInView } from 'react-intersection-observer';
-import localization from '@/public/localization/localization.json';
-
-const slideUpVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-};
+import { useLocalization } from '@/hooks/useLocalization';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { slideUpVariants } from '@/lib/animationVariants';
 
 export default function Header() {
     const context = useContext(AppContext);
-    const l = localization[context.language];
+    const l = useLocalization();
+    const { ref, controls } = useScrollAnimation();
 
     const socialMediaLinks = [
         { icon: <FaBehanceSquare />, link: 'https://be.net/kevinjonathan3010' },
@@ -23,13 +20,6 @@ export default function Header() {
         { icon: <FaLinkedin />, link: 'https://www.linkedin.com/in/kevinjonathan3010' },
         { icon: <FaTwitterSquare />, link: 'https://x.com/kevinjo30_' },
     ];
-
-    const controls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.1 });
-
-    useEffect(() => {
-        controls.start(inView ? 'visible' : 'hidden');
-    }, [controls, inView]);
 
     return (
         <section ref={ref}>

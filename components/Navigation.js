@@ -9,25 +9,16 @@ import { GiJapan } from 'react-icons/gi';
 import Button from './include/Button';
 import AppContext from '@/context/AppContext';
 import AnimatedAnchor from './include/AnimatedAnchor';
-import { useInView } from 'react-intersection-observer';
-import localization from '@/public/localization/localization.json';
-
-const slideUpVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-};
+import { useLocalization } from '@/hooks/useLocalization';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { slideUpVariants } from '@/lib/animationVariants';
 
 export default function Navigation() {
     const context = useContext(AppContext);
     const [menuOpen, setMenuOpen] = useState(false);
-    const controls = useAnimation();
+    const { ref, controls } = useScrollAnimation();
     const menuControls = useAnimation();
-    const { ref, inView } = useInView({ threshold: 0.1 });
-    const l = localization[context.language];
-
-    useEffect(() => {
-        controls.start(inView ? 'visible' : 'hidden');
-    }, [controls, inView]);
+    const l = useLocalization();
 
     const openMenu = () => {
         setMenuOpen(true);

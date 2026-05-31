@@ -1,24 +1,17 @@
 // Portfolio: Fetches and displays Behance portfolio items with loading and animation
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState } from 'react';
 import AnchorImage from './include/AnchorImage';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import AppContext from '@/context/AppContext';
-import localization from '@/public/localization/localization.json';
-
-const slideUpVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-};
+import { motion } from 'framer-motion';
+import { useLocalization } from '@/hooks/useLocalization';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { slideUpVariants } from '@/lib/animationVariants';
 
 export default function Portfolio() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [allLoaded, setAllLoaded] = useState(false);
-    const { ref, inView } = useInView({ threshold: 0.1 });
-    const controls = useAnimation();
-    const context = useContext(AppContext);
-    const l = localization[context.language];
+    const { ref, controls } = useScrollAnimation();
+    const l = useLocalization();
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -70,8 +63,8 @@ export default function Portfolio() {
     }, [items]);
 
     useEffect(() => {
-        controls.start(allLoaded && inView ? 'visible' : 'hidden');
-    }, [controls, allLoaded, inView]);
+        controls.start(allLoaded ? 'visible' : 'hidden');
+    }, [controls, allLoaded]);
 
     if (loading) {
         return (
