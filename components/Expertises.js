@@ -8,7 +8,7 @@ import { useLocalization } from '@/hooks/useLocalization';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import { slideUpVariants } from '@/lib/animationVariants';
 
-export default function Services() {
+export default function Expertises() {
     const { ref, controls } = useScrollAnimation();
     const context = useContext(AppContext);
     const l = useLocalization();
@@ -22,9 +22,9 @@ export default function Services() {
                 variants={slideUpVariants}
                 transition={{ duration: 0.5, delay: 0.1 }}
             >
-                <h3 className="text-3xl py-1 dark:text-white">{l.servicesTitle}</h3>
+                <h3 className="text-3xl py-1 dark:text-white">{l.expertisesTitle}</h3>
                 <p className="text-md md:text-lg py-2 leading-8 text-gray-800 dark:text-gray-200">
-                    {l.servicesDescription}
+                    {l.expertisesDescription}
                 </p>
             </motion.div>
             <motion.div
@@ -36,27 +36,27 @@ export default function Services() {
             >
                 <ServiceCard
                     icon={<FaPalette className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
-                    title={l.serviceUiUxDesignTitle}
-                    description={l.serviceUiUxDesignDescription}
-                    topicTitle={l.serviceUiUxDesignTopicsTitle}
-                    topics={l.serviceUiUxDesignTopics}
+                    title={l.expertiseUiUxDesignTitle}
+                    description={l.expertiseUiUxDesignDescription}
+                    topicTitle={l.expertiseUiUxDesignTopicsTitle}
+                    topics={l.expertiseUiUxDesignTopics}
                     href="https://www.behance.net/kevinjonathan3010"
                 />
                 <ServiceCard
                     icon={<FaCode className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
-                    title={l.serviceSoftwareDevelopmentTitle}
-                    description={l.serviceSoftwareDevelopmentDescription}
-                    topicTitle={l.serviceSoftwareDevelopmentTopicsTitle}
-                    topics={l.serviceSoftwareDevelopmentTopics}
+                    title={l.expertiseSoftwareDevelopmentTitle}
+                    description={l.expertiseSoftwareDevelopmentDescription}
+                    topicTitle={l.expertiseSoftwareDevelopmentTopicsTitle}
+                    topics={l.expertiseSoftwareDevelopmentTopics}
                     href="https://github.com/kevinjonathan30"
                 />
                 <ServiceCard
                     icon={<FaGraduationCap className="mx-auto p-2 cursor-pointer bg-blue-500 dark:bg-blue-400 text-white dark:text-black text-5xl rounded-lg" />}
-                    title={l.serviceStudentTutoringTitle}
-                    description={l.serviceStudentTutoringDescription}
-                    topicTitle={l.serviceStudentTutoringTopicsTitle}
-                    topics={l.serviceStudentTutoringTopics}
-                    href="https://calendar.app.google/Vg9egaVjzCngS1Fb7"
+                    title={l.expertiseStudentTutoringTitle}
+                    description={l.expertiseStudentTutoringDescription}
+                    topicTitle={l.expertiseStudentTutoringTopicsTitle}
+                    topics={l.expertiseStudentTutoringTopics}
+                    href="https://www.teacheron.com/tutor/aRJv?r=aRJv"
                 />
             </motion.div>
         </section>
