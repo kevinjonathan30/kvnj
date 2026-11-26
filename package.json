@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
-    "@vercel/speed-insights": "^1.0.12",
+    "@vercel/speed-insights": "^2.1.0",
     "eslint": "8.35.0",
     "eslint-config-next": "^14.2.13",
     "framer-motion": "^10.12.16",
